@@ -49,8 +49,6 @@ La rama deberá seguir la siguiente nomenclatura:
 nombre_apellido
 ```
 
-Por ejemplo:
-
 ---
 
 ### 2. Resolver los ejercicios
