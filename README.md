@@ -7,8 +7,9 @@ El objetivo de este trabajo práctico es aplicar conceptos básicos de programac
 - Estructuras de control de flujo
   - Condicionales (`if`, `elif`, `else`)
   - Bucles (`for`, `while`)
+- Tipos de datos compuestos (Listas, tuplas, diccionarios, sets)
+- Funciones y modularización del código
 - Resolución de problemas mediante algoritmos simples
-- Uso correcto de variables y operaciones básicas
 - Buenas prácticas de desarrollo utilizando Git y GitHub
 
 ---
@@ -18,15 +19,15 @@ El objetivo de este trabajo práctico es aplicar conceptos básicos de programac
 Cada ejercicio se encuentra en un archivo independiente con el siguiente formato:
 
 ```text
-ejXX_titulo.py
+ejercicio_XX.py
 ```
 
 Por ejemplo:
 
 ```text
-ej01_hola_mundo.py
-ej02_numero_par.py
-ej03_tabla_multiplicar.py
+ejercicio_01.py
+ejercicio_02.py
+ejercicio_03.py
 ```
 
 Inicialmente, cada archivo contiene únicamente la consigna del ejercicio dentro de un comentario.
@@ -46,7 +47,7 @@ Cada alumno debe crear su propia rama a partir de `main`.
 La rama deberá seguir la siguiente nomenclatura:
 
 ```text
-nombre_apellido
+apellido_nombre
 ```
 
 ---
@@ -70,15 +71,15 @@ Ejemplos:
 
 ```text
 "Resuelve ejercicio 1"
-"Correge ejercicio 3"
-"Agrega validacion en ejercicio 5"
+"Corrige ejercicio 3"
+"Agrega validación en ejercicio 5"
 ```
 
 ---
 
 ### 4. Crear un Pull Request (PR)
 
-Una vez finalizados los ejercicios, cada alumno deberá crear un Pull Request (PR) hacia la rama `main`.
+Cada alumno deberá crear un Pull Request (PR) hacia la rama `main`.
 
 El PR será utilizado para:
 
