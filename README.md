@@ -16,7 +16,9 @@ El objetivo de este trabajo práctico es aplicar conceptos básicos de programac
 
 ## Estructura del repositorio
 
-Cada ejercicio se encuentra en un archivo independiente con el siguiente formato:
+Las consignas de los ejercicios se encuentran en el archivo `Ejercicios.md`.
+
+Cada ejercicio deberá realizarse en un archivo .py independiente con el siguiente formato:
 
 ```text
 ejercicio_XX.py
@@ -29,10 +31,6 @@ ejercicio_01.py
 ejercicio_02.py
 ejercicio_03.py
 ```
-
-Inicialmente, cada archivo contiene únicamente la consigna del ejercicio dentro de un comentario.
-
-Cada alumno deberá completar el código correspondiente en cada archivo.
 
 ---
 
