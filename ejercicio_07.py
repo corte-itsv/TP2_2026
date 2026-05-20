@@ -1,7 +1,7 @@
 def esta_en_lista(lista, elemento):
     for x in lista:
         if x == elemento:
-            return True
+            return True    
     return False
     
 def posicion_en_lista(lista, elemento):
