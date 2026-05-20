@@ -15,6 +15,5 @@ resultado = min_max(numeros)
 minimo, maximo = resultado
 
 print(f"Lista: {numeros}")
-print(f"Mínimo: {minimo}")
-print(f"Máximo: {maximo}")
-print(f"Tupla completa: {resultado}")
+print(f"Valor mínimo: {minimo}")
+print(f"Valor máximo: {maximo}")
