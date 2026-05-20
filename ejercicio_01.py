@@ -1,6 +1,6 @@
 def clasificar_nota(nota):
     if nota == 10:
-        print("Excelente")
+        print("Perfecto")
     elif nota in [9, 8]:
         print("Muy bueno")
     elif nota in [7, 6]:
