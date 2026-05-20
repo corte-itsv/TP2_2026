@@ -6,10 +6,10 @@ def calcular_promedio(notas):
         cant += 1
         suma += nota
         promedio = suma/cant
-    print(promedio)
+    return promedio
 lista_a = [8, 9, 7, 10, 6]
 lista_b = [4, 5, 3, 6, 4, 5]
 lista_c = []
-calcular_promedio(lista_a)
-calcular_promedio(lista_b)
-calcular_promedio(lista_c)
+print(f"Promedio A: {calcular_promedio(lista_a)}")
+print(f"Promedio B: {calcular_promedio(lista_b)}")
+print(f"Promedio C: {calcular_promedio(lista_c)}")
