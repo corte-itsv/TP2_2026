@@ -1,7 +1,7 @@
 def clasificar_nota(nota):
 
     if nota == 10:
-        return "Perfecto"
+        return "Perfecto"    
 
     elif nota == 8 or nota == 9:
         return "Muy bueno"
