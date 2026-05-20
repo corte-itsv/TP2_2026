@@ -7,4 +7,4 @@ def invertir(lista):
 original = [1, 2, 3, 4, 5]
 print(invertir(original)) 
 letras = ["a", "b", "c", "d"]
-print(invertir(letras))
+print(invertir(letras)) 
