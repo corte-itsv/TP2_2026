@@ -15,3 +15,9 @@ def clasificar_nota(nota):
         return "Nota inválida"
 resultado = clasificar_nota(nota)
 print(resultado)
+
+#funcion --> "def" -> - nombre - -> "()"
+
+#if
+#elif
+#else
