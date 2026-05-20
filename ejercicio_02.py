@@ -9,4 +9,4 @@ print(f"Promedio A: {calcular_promedio(lista_a)}")
 lista_b = [4, 5, 3, 6, 4, 5]
 print(f"Promedio B: {calcular_promedio(lista_b)}")
 lista_c = []
-print(f"Promedio C: {calcular_promedio(lista_c)}")
+print(f"Promedio C: {calcular_promedio(lista_c)}") 
