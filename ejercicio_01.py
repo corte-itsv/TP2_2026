@@ -1,17 +1,18 @@
 def clasificar_nota(nota):
     if nota == 10:
-        print("Perfecto")
+        return "Perfecto"
     elif nota in [9, 8]:
-        print("Muy bueno")
+        return "Muy bueno"
     elif nota in [7, 6]:
-        print("aprobado")
+        return "aprobado"
     elif nota in [5, 4]:
-        print("desaprobado (cerca)")
+        return "desaprobado (cerca)"
     elif nota in [3, 2, 1]:
-        print("desaprobado (lejos)")
+        return "desaprobado (lejos)"
     else:
-        print("nota invalida")
+        return("nota invalida")
 nota = int(input("Introducí tu nota: "))
 clasificar_nota(nota)
+print(clasificar_nota(nota))
 
     
