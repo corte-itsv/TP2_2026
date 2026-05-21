@@ -113,16 +113,9 @@ Máximo: 89
 
 ### Ejercicio 05
 
-**Temas:** Función · `list` · `for` · `if` · List comprehension · `return`
+**Temas:** Función · `list` · `for` · `if` · `return`
 
 Escribí una función llamada `filtrar_pares(numeros)` que reciba una lista de enteros y devuelva una **nueva lista** con solo los números pares.
-
-Implementá la función de **dos maneras**:
-
-- Versión A: usando un `for` con `append()`
-- Versión B: usando una **list comprehension**
-
-Ambas deben dar el mismo resultado. Probá con:
 
 ```python
 numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
@@ -131,8 +124,7 @@ numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 **Salida esperada:**
 
 ```
-Versión A: [2, 4, 6, 8, 10, 12]
-Versión B: [2, 4, 6, 8, 10, 12]
+[2, 4, 6, 8, 10, 12]
 ```
 
 ---
