@@ -6,8 +6,8 @@ def calcular_promedio(notas):
     cant = len(notas)
     if cant == 0:
         return 0
-    return sum(notas) / len(notas)
+    return round((sum(notas) / len(notas)), 2)
 
-print(round(calcular_promedio(lista_a), 2))
-print(round(calcular_promedio(lista_b), 2))
-print(round(calcular_promedio(lista_c), 2))
+print(calcular_promedio(lista_a))
+print(calcular_promedio(lista_b))
+print(calcular_promedio(lista_c))
