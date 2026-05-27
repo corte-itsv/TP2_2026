@@ -6,6 +6,7 @@ def min_max(numeros):
         if numero < minimo:
             minimo = numero
 
+
         if numero > maximo:
             maximo = numero
 
