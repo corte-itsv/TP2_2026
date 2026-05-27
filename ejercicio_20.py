@@ -59,3 +59,4 @@ votar(votos, ya_votaron, "Lucía",     "Marta", padron)
 resultado(votos)
 nom_ganador, cant_votos = ganador(votos)
 print(f"\n🏆 Ganador/a: {nom_ganador} con {cant_votos} votos.")
+
