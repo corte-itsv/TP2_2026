@@ -18,6 +18,7 @@ def mostrar_tabla(tabla, numero):
 # Número de prueba
 numero = 7
 
+
 # Generar tabla
 tabla = tabla_multiplicar(numero)
 
