@@ -4,7 +4,7 @@ def calcular_promedio(notas):
 
     promedio =  sum(notas) / len(notas) 
 
-    return (promedio)
+    return round(promedio, 2)
 
 
 lista_a = [8, 9, 7, 10, 6]
