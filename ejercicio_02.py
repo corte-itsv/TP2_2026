@@ -8,6 +8,6 @@ def calcular_promedio(notas):
         return 0
     return sum(notas) / len(notas)
 
-print(calcular_promedio(lista_a))
-print(calcular_promedio(lista_b))
-print(calcular_promedio(lista_c))
+print(round(calcular_promedio(lista_a), 2))
+print(round(calcular_promedio(lista_b), 2))
+print(round(calcular_promedio(lista_c), 2))
