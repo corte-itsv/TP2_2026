@@ -1,24 +1,22 @@
 notas = [8, 3, 6, 10, 4, 7, 5, 9, 6, 2]
 
-aprobados = 0
-desaprobados = 0
-
 def contar_aprobados(notas):
-    for aprobados in len(notas):
+    aprobados = 0
+    for nota in notas:
         if nota >= 6:
             aprobados = aprobados + 1
-        else:
-            aprobados = aprobados + 0
+    return aprobados
+
     
 def contar_desaprobados(notas):
-    for desaprobados in len(notas):
+    desaprobados = 0
+    for nota in notas:
         if nota <= 5:
             desaprobados = desaprobados + 1
-        else:
-            desaprobados =  desaprobados + 0
+    return desaprobados
 
 cant_aprobados = contar_aprobados(notas)
 cant_desaprobados = contar_desaprobados(notas)
 
-print(cant_aprobados)
-print(cant_desaprobados)
+print(f"La cantidad de aprobados es {cant_aprobados}")
+print(f"La cantidad de desaprobados es {cant_desaprobados}")
