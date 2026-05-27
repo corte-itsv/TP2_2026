@@ -25,10 +25,13 @@ def reporte_curso(curso):
     print("======================================")
     return lista_ordenada
 
-def resumen(curso, lista_ordenada):
+def resumen(curso):
+    lista_ordenada = reporte_curso(curso)
+    
     suma_promedios = 0
     for alumno in lista_ordenada:
         suma_promedios += alumno[1]
+        
     promedio_general = round(suma_promedios / len(lista_ordenada), 2) 
     mejor_alumno = lista_ordenada[0][0]    
     mejor_nota = lista_ordenada[0][1]
@@ -49,5 +52,4 @@ curso = {
     "Pedro":   [5,  4, 6, 5, 3],
 }
 
-lista_ordenada = reporte_curso(curso)
-resumen(curso, lista_ordenada)
+resumen(curso)
