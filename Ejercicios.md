@@ -551,7 +551,7 @@ pera: $700 | Stock: 0
 uva: $900 | Stock: 15
 
 Sin stock: ['pera']
-Valor total: $43500
+Valor total: $47500
 ```
 
 ---
@@ -581,8 +581,8 @@ Escribí estas funciones:
 **Salida esperada:**
 
 ```
-Total de palabras: 24
-Palabras únicas: 17
+Total de palabras: 25
+Palabras únicas: 18
 Frecuencias:
   python       : 3
   es           : 3
@@ -591,7 +591,7 @@ Frecuencias:
   un           : 1
   ...
 Palabra más común: 'python' (3 veces)
-Palabras largas (>=7): ['aprender', 'artificial', 'ciencia', 'desarrollo', 'inteligencia', 'programacion']
+Palabras largas (>=7): ['aprender', 'artificial', 'ciencia', 'desarrollo', 'inteligencia', 'lenguaje', 'programacion']
 ```
 
 ---
