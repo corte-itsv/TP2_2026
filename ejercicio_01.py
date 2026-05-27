@@ -11,6 +11,8 @@ def clasificar_nota(nota):
        return "Desaprobado (lejos)"
     else: 
        return "Nota inválida"
+       
+       
 notas_a_probar = [10, 7, 4, 0, 11]
 for n in notas_a_probar:
     resultado = clasificar_nota(n)
