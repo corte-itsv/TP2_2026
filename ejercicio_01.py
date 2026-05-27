@@ -1,4 +1,4 @@
-nota = int(input("Ingrese la nota del alumno: ")) 
+nota = 7
 
 def clasificar_nota(nota):
     if nota == 10:
