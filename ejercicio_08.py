@@ -10,19 +10,21 @@ def contar_frecuencia(palabras):
 def palabra_mas_repetida(frecuencias):
     palabra_ganadora = ""
     max_cantidad = 0  
-    
+
     for palabra, cantidad in frecuencias.items():
         if cantidad > max_cantidad:
             max_cantidad = cantidad
             palabra_ganadora = palabra
             
-    return palabra_ganadora
+    return {palabra_ganadora: max_cantidad}
+
 
 palabras = ["python", "es", "genial", "python", "es", "facil", "python"]
 
-
 dicc_frecuencias = contar_frecuencia(palabras)
 print(dicc_frecuencias)  
+
 ganadora = palabra_mas_repetida(dicc_frecuencias)
-veces = dicc_frecuencias[ganadora]
-print(f"La palabra más repetida es: '{ganadora}' ({veces} veces)")
+
+for texto_palabra, cantidad_veces in ganadora.items():
+    print(f"\nLa palabra más repetida es: '{texto_palabra}' ({cantidad_veces} veces)")
