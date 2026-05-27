@@ -15,10 +15,10 @@ def eliminar_contacto(agenda, nombre):
 
 
 def mostrar_agenda(agenda):
-    print("Agenda:")
+    print("=== AGENDA ===")
 
     for nombre in sorted(agenda):
-        print(nombre, "->", agenda[nombre])
+        print(nombre, "-", agenda[nombre])
 
 
 # Crear agenda
