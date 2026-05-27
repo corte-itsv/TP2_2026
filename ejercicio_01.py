@@ -14,3 +14,4 @@ def clasificar_nota(nota):
 
 for nota in [10, 7, 4, 0, 11]:
     print(f"{nota} = {clasificar_nota(nota)}")
+    
