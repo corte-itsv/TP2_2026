@@ -12,9 +12,9 @@ def clasificar_nota(nota):
     else:
         return("Nota invalida")
 
-
-nota = int(input("Introducí tu nota: "))
-clasificar_nota(nota)
-print(clasificar_nota(nota))
+if __name__ == "__main__":
+    nota = int(input("Introducí tu nota: "))
+    clasificar_nota(nota)
+    print(clasificar_nota(nota))
 
     
