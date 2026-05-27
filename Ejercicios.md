@@ -66,7 +66,7 @@ Promedio C: 0
 **Temas:** Función · `list` · `for` · `if` · `return`
 
 Escribí dos funciones:
-
+min_max(numeros)
 1. `contar_aprobados(notas)` → recibe una lista de notas y devuelve cuántas son **mayores o iguales a 6**.
 2. `contar_desaprobados(notas)` → recibe una lista de notas y devuelve cuántas son **menores a 6**.
 
@@ -90,7 +90,7 @@ Desaprobados: 4
 
 **Temas:** Función · `list` · `for` · `if` · `tuple` · `return`
 
-Escribí una función llamada `min_max(numeros)` que reciba una lista de números y devuelva una **tupla** con el valor mínimo y el valor máximo, **sin usar las funciones `min()` ni `max()`**.
+Escribí una función llamada `` que reciba una lista de números y devuelva una **tupla** con el valor mínimo y el valor máximo, **sin usar las funciones `min()` ni `max()`**.
 
 La función debe recorrer la lista con un `for` y comparar valores.
 
