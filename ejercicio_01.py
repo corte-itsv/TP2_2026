@@ -1,7 +1,7 @@
 print("Escribe la nota:")
 nota = int(input())
 
-def clasificar(nota): 
+def clasificar_nota(nota): 
     if nota == 10 :
         return "Perfecto"
     elif nota == 9 or nota == 8 :
@@ -15,4 +15,4 @@ def clasificar(nota):
     else :
         return "nota invalida"
 
-print(clasificar(nota))
+print(clasificar_nota(nota))
