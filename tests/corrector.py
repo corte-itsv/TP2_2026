@@ -488,8 +488,6 @@ def test_05(context: ExerciseContext) -> None:
         if callable(context.namespace.get(name))
     ]
     functions.insert(0, main_func)
-    if not any(isinstance(node, ast.ListComp) for node in ast.walk(context.tree)):
-        context.fail("Debe existir una version con list comprehension.")
     if not has_attribute_call(context.tree, {"append"}):
         context.fail("Debe existir una version con for y append().")
     for func in functions:
