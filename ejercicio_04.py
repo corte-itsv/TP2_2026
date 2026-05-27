@@ -10,7 +10,7 @@ def min_max(numeros):
  return minimo, maximo
 
 
-numeros = [34, 7, 89, 172, 56, 3, 78, 45]
+numeros = [34, 7, 89, 12, 56, 3, 78, 45]
 minimo, maximo = min_max(numeros)
 print(f"Minimo: {minimo}")
 print(f"Maximo: {maximo}")

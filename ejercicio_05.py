@@ -8,7 +8,10 @@ def filtrar_pares_A(numeros):
 def filtrar_pares_B(numeros):
     return [numero for numero in numeros if numero % 2 == 0] 
 
-numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+def filtrar_pares(numeros):
+    return filtrar_pares_B(numeros)
 
-print(f"Versión A: {filtrar_pares_A(numeros)}")
-print(f"Versión B: {filtrar_pares_B(numeros)}")
+if __name__ == "__main__":
+    numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    print(f"Versión A: {filtrar_pares_A(numeros)}")
+    print(f"Versión B: {filtrar_pares_B(numeros)}")
