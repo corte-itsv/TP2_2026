@@ -5,7 +5,7 @@ def condicion(promedio):
     if promedio >= 6:
         return "Aprobado"
     else:
-        return "Desaprobado"
+        return "Desaprimido"
         
 def reporte_curso(curso):
     lista_alumnos = []
@@ -25,7 +25,9 @@ def reporte_curso(curso):
     print("======================================")
     return lista_ordenada
 
-def resumen(curso, lista_ordenada):
+def resumen(curso):
+    lista_ordenada = reporte_curso(curso)
+    
     suma_promedios = 0
     for alumno in lista_ordenada:
         suma_promedios += alumno[1]
@@ -49,5 +51,4 @@ curso = {
     "Pedro":   [5,  4, 6, 5, 3],
 }
 
-lista_ordenada = reporte_curso(curso)
-resumen(curso, lista_ordenada)
+resumen(curso)
