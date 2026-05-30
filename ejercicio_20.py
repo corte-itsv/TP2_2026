@@ -35,7 +35,7 @@ def ganador(votos):
         if candidato != "Blanco" and cantidad > votos_ganador:
             votos_ganador = cantidad
             ganador_actual = candidato
-    return ganador_actual, votos_ganador
+    return ganador_actual
 
 
 padron = set()
@@ -57,6 +57,7 @@ votar(votos, ya_votaron, "Pedro",     "Ana",  padron)
 votar(votos, ya_votaron, "Lucía",     "Marta", padron)
 
 resultado(votos)
-nom_ganador, cant_votos = ganador(votos)
-print(f"\n🏆 Ganador/a: {nom_ganador} con {cant_votos} votos.")
 
+nom_ganador = ganador(votos)
+cant_votos = votos[nom_ganador]
+print(f"\n🏆 Ganador/a: {nom_ganador} con {cant_votos} votos.")
