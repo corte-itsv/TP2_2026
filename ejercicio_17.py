@@ -1,14 +1,20 @@
 def cifrar(texto, desplazamiento):
     texto_cifrado = "" 
     for caracter in texto:
-        caracter_cif = chr(ord(caracter) + desplazamiento)
+        if 'a' <= caracter <= 'z':
+            caracter_cif = chr((ord(caracter) - ord('a') + desplazamiento) % 26 + ord('a'))
+        else:
+            caracter_cif = caracter
         texto_cifrado += caracter_cif
     return texto_cifrado
 
 def descifrar(texto_cifrado, desplazamiento):
     texto_descifrado = ""  
     for caracter in texto_cifrado:
-        caracter_descif = chr(ord(caracter) - desplazamiento)  
+        if 'a' <= caracter <= 'z':
+            caracter_descif = chr((ord(caracter) - ord('a') - desplazamiento) % 26 + ord('a'))
+        else:
+            caracter_descif = caracter  
         texto_descifrado += caracter_descif  
     return texto_descifrado
 
