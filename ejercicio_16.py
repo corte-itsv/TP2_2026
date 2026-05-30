@@ -5,7 +5,7 @@ def condicion(promedio):
     if promedio >= 6:
         return "Aprobado"
     else:
-        return "Desaprimido"
+        return "Desaprobado"
         
 def reporte_curso(curso):
     lista_alumnos = []
