@@ -27,4 +27,4 @@ print(dicc_frecuencias)
 ganadora = palabra_mas_repetida(dicc_frecuencias)
 
 for texto_palabra, cantidad_veces in ganadora.items():
-    print(f"\nLa palabra más repetida es: '{texto_palabra}' ({cantidad_veces} veces)")
+    print(f"La palabra más repetida es: '{texto_palabra}' ({cantidad_veces} veces)")
