@@ -1,17 +1,19 @@
-print("Nota:")
-nota = int (input())
 def clasificar_nota(nota):
     if nota == 10:
-        return "Aprobado"
-    elif nota >= 8 or nota == 9:
+        return "Perfecto"
+    elif nota in [8, 9]:
         return "Muy bueno"
-    elif nota == 6 or nota == 7:
+    elif nota in [6, 7]:
         return "Aprobado"
-    elif nota == 4 or nota == 5:
+    elif nota in [5, 4]:
         return "Desaprobado (cerca)"
-    elif nota == 1 or nota == 2 or nota == 3:
+    elif nota in [3, 2, 1]:
         return "Desaprobado (lejos)"
-    else :
-        print("Nota inválida")
+    else:
+        return "Nota inválida"
 
-print(clasificar_nota(nota))
+notas_prueba  = [10, 7, 4, 0, 11]
+
+for n in notas_prueba:
+    resultado = clasificar_nota(n)
+    print(f"{n} -> {resultado}")

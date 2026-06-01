@@ -1,7 +1,7 @@
 def pares_1(numeros):
     pares = []
     for numero in numeros:
-        if numero % 2 == 0:
+        if numero %2 == 0:
             pares.append(numero)
     return pares
 
