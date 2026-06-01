@@ -5,7 +5,6 @@ def pares_1(numeros):
             pares.append(numero)
     return pares
 
-#version 2
 def pares_2(numeros):
     return [numero for numero in numeros if numero % 2 == 0]
 
