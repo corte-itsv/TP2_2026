@@ -1,6 +1,3 @@
-print("Escribe la nota:")
-nota = int(input())
-
 def clasificar_nota(nota): 
     if nota == 10 :
         return "Perfecto"
@@ -15,4 +12,5 @@ def clasificar_nota(nota):
     else :
         return "nota invalida"
 
-print(clasificar_nota(nota))
+for n in[10, 7, 4, 0, 11]:
+ print(f"{n} -> {clasificar_nota(n)}")
