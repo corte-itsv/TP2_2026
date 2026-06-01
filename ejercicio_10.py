@@ -9,8 +9,9 @@ def tabla_multiplicar(numero):
 
 def mostrar_tabla(tabla, numero):
     print(f"=== Tabla del {numero} ===")
+
     for multiplicador, resultado in tabla:
-        pgirint(f"{numero} x {multiplicador} = {resultado}")
+        print(f"{numero} x {multiplicador} = {resultado}")
 
 
 numero = 7
