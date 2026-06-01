@@ -10,7 +10,7 @@ def clasificar_nota(nota):
     elif nota == 3 or nota == 2 or nota == 1:
         return "Desaprobado (lejos)"
     else :
-        return "nota invalida"
+        return "Nota inválida"
 
 for n in[10, 7, 4, 0, 11]:
  print(f"{n} -> {clasificar_nota(n)}")
