@@ -12,8 +12,8 @@ clase_miercoles = ["Ana", "Sol", "Pedro", "Julia", "Tomás"]
 
 ambos = interseccion(clase_lunes, clase_miercoles)
 solo_a = solo_en_a(clase_lunes, clase_miercoles)
-union = union(clase_lunes, clase_miercoles) 
+unite = union(clase_lunes, clase_miercoles) 
 
 print(f"Asistieron ambos días: {sorted(ambos)}")
-print(f"Asistieron al menos un día: {sorted(union)}")
+print(f"Asistieron al menos un día: {sorted(unite)}")
 print(f"Solo el lunes: {sorted(solo_a)}")
