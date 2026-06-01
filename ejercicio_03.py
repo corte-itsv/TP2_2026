@@ -1,15 +1,15 @@
 
 def contar_aprobados(notas):
     contador = 0
-    for notas in notas:
-        if notas >= 6:
+    for nota in notas:
+        if nota >= 6:
             contador += 1
     return contador
 
 def contar_desaprobados(notas):
     contador = 0
-    for notas in notas:
-        if notas < 6:
+    for nota in notas:
+        if nota < 6:
             contador += 1
     return contador
 
