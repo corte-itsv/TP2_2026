@@ -8,7 +8,7 @@ def calcular_promedio(notas):
     suma = sum(notas)
     cantidad = len(notas)
     promedio = suma / cantidad
-    return(promedio)
+    return round(promedio, 2)
 
 print(calcular_promedio(lista_a))
 print(calcular_promedio(lista_b))
