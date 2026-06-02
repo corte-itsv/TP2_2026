@@ -28,7 +28,7 @@ def resultado(votos):
     )
 
 def ganador(votos):
-    return max(votos.items(), key=lambda x: x[1])
+    return max(votos, key=votos.get)
 
 padron = set()
 ya_votaron = set()
@@ -59,6 +59,7 @@ print("\n=== RESULTADOS ===")
 for candidato, cantidad in resultado(votos).items():
     print(f"{candidato}: {cantidad} votos")
 
-gan, cant = ganador(votos)
+gan = ganador(votos)
+cant = votos[gan]
 
 print(f"\n🏆 Ganador/a: {gan} con {cant} votos")
