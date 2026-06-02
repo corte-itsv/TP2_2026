@@ -3,7 +3,7 @@ notas = [8, 3, 6, 10, 4, 7, 5, 9, 6, 2]
 def contar_aprobados(notas):
     aprobados = 0
     for nota in notas:
-        if round(nota) >= 6:
+        if nota >= 6:
             aprobados = aprobados + 1
     return aprobados
 
@@ -11,7 +11,7 @@ def contar_aprobados(notas):
 def contar_desaprobados(notas):
     desaprobados = 0
     for nota in notas:
-        if round(nota) <= 5:
+        if nota < 6:
             desaprobados = desaprobados + 1
     return desaprobados
 
