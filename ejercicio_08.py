@@ -18,12 +18,13 @@ def palabra_mas_repetida(frecuencias):
         if cantidad > c_max:
             c_max = cantidad
             palabra_rep = palabra
-    return {palabra_rep: c_max}
+    return palabra_rep
 
 dicc_freq = contar_frecuencia(palabras)
 print(dicc_freq)
 
 ganadora = palabra_mas_repetida(dicc_freq)
 
-for texto_palabra, cant_veces in ganadora.items():
-    print(f"La palabra más repetida es: '{texto_palabra}' ({cant_veces} veces)")
+cant_veces = dicc_freq[ganadora]
+
+print(f"La palabra más repetida es: '{ganadora}' ({cant_veces} veces)")
