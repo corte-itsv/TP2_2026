@@ -12,6 +12,7 @@ def posicion_en_lista(lista, elemento):
             return i
     return -1
 
+
 frutas = ["manzana", "banana", "pera", "uva", "kiwi"]
 
 print("¿'pera' está en la lista?", esta_en_lista(frutas, "pera"))
