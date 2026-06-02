@@ -1,11 +1,11 @@
 def interseccion(lista_a, lista_b):
-    return set(lista_a) & set(lista_b)
+    return list(set(lista_a) & set(lista_b))
 
 def union(lista_a, lista_b):
-    return set(lista_a) | set(lista_b)
+    return list(set(lista_a) | set(lista_b))
 
 def solo_en_a(lista_a, lista_b):
-    return set(lista_a) - set(lista_b)
+    return list(set(lista_a) - set(lista_b))
 
 
 clase_lunes    = ["Ana", "Luis", "Sol", "Marcos", "Julia"]
