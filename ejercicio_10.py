@@ -15,4 +15,4 @@ print("=== Tabla del 7 ===")
 numero = 7
 tabla = tabla_multiplicar(numero)
 
-mostrar_tabla(numero, tabla)
+mostrar_tabla(tabla, numero)
