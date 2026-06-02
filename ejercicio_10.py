@@ -7,9 +7,9 @@ def tabla_multiplicar(numero):
     return tabla
 
 
-def mostrar_tabla(numero, tabla):
-    for dato in tabla:
-        print(f"{numero} x {dato[0]} = {dato[1]}")
+def mostrar_tabla(tabla, numero):
+    for multiplicador, resultado in tabla:
+        print(f"{numero} x {multiplicador} = {resultado}")
 
 print("=== Tabla del 7 ===")
 numero = 7
