@@ -7,7 +7,7 @@ def buscar_contacto(agenda, nombre):
     if nombre in agenda:
         return agenda[nombre]
     else:
-        return "Contacto no encontrado."
+        return "Contacto no encontrado"
     
 def eliminar_contacto(agenda, nombre):
     if nombre in agenda:
