@@ -8,8 +8,6 @@ def tabla_multiplicar(numero):
 
 
 def mostrar_tabla(tabla, numero):
-    print(f"Tabla de multiplicar del {numero}")
-    print("=" * 30)
     for multiplicador, resultado in tabla:
         print(f"{numero} x {multiplicador} = {resultado}")
 
