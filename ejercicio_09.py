@@ -5,7 +5,7 @@ def agregar_contacto(agenda, nombre, telefono):
 
 def buscar_contacto(agenda, nombre):
     if nombre in agenda:
-        return f"Teléfono de {nombre}: {agenda[nombre]}"
+        return agenda[nombre]
     else:
         return f"{nombre}: Contacto no encontrado."
     
