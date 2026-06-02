@@ -11,7 +11,7 @@ def alumnos_aprobados(promedios):
         if promedio >= 6
     ]
 
-def mejor_alumno(promedios):
+def alumno_destacado(promedios):
      return max(promedios.items(), key=lambda x: x[1])[0]
 
 
@@ -27,5 +27,5 @@ promedios = calcular_promedios(curso)
 aprobados = alumnos_aprobados(promedios)
 
 print(f"Promedios: {promedios}")
-print(f"Alumno destacado: {mejor_alumno(promedios)}")
+print(f"Alumno destacado: {alumno_destacado(promedios)}")
 print(f"Aprobados: {aprobados}")
