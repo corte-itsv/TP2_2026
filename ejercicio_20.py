@@ -1,28 +1,42 @@
 def registrar_alumno(padron, nombre):
     padron.add(nombre)
 
+
 def votar(votos, ya_votaron, nombre_votante, candidato, padron):
     if nombre_votante not in padron:
         print(f"{nombre_votante} no está habilitado para votar.")
         return
+
     if nombre_votante in ya_votaron:
         print(f"{nombre_votante} ya votó.")
         return
-        
+
     ya_votaron.add(nombre_votante)
-    if candidato in votos:
+
+    if candidato in ["Ana", "Luis", "Sol"]:
         votos[candidato] += 1
     else:
         votos["Blanco"] += 1
         print(f"{nombre_votante} votó en blanco.")
 
+
 def resultado(votos):
-    return dict(sorted(votos.items(), key=lambda x: x[1], reverse=True))
+    votos_ordenados = dict(sorted(votos.items(), key=lambda item: item[1], reverse=True))
+    print("\n=== RESULTADOS ===")
+    for candidato, cant in votos_ordenados.items():
+        print(f"{candidato:<6} : {cant} votos")
+    return votos_ordenados
+
 
 def ganador(votos):
-    votos_filtrados = {k: v for k, v in votos.items() if k != "Blanco"}
-    candidato_ganador = max(votos_filtrados, key=votos_filtrados.get)
-    return candidato_ganador, votos_filtrados[candidato_ganador]
+    ganador_actual = ""
+    votos_ganador = -1
+    for candidato, cantidad in votos.items():
+        if candidato != "Blanco" and cantidad > votos_ganador:
+            votos_ganador = cantidad
+            ganador_actual = candidato
+    return ganador_actual
+
 
 padron = set()
 ya_votaron = set()
@@ -42,13 +56,8 @@ votar(votos, ya_votaron, "Valentina", "Sol",  padron)
 votar(votos, ya_votaron, "Pedro",     "Ana",  padron)
 votar(votos, ya_votaron, "Lucía",     "Marta", padron)
 
-print()
-print("=== RESULTADOS ===")
-resultados_ordenados = resultado(votos)
-for cand, cant in resultados_ordenados.items():
-    voto_str = "voto" if cant == 1 else "votos"
-    print(f"{cand:<6} : {cant} {voto_str}")
+resultado(votos)
 
-print()
-nom_ganador, cant_ganador = ganador(votos)
-print(f" Ganador/a: {nom_ganador}")
+nom_ganador = ganador(votos)
+cant_votos = votos[nom_ganador]
+print(f"\n Ganador/a: {nom_ganador} con {cant_votos} votos.")
