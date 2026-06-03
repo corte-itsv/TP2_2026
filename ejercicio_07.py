@@ -17,3 +17,6 @@ print(f"¿'pera' está en la lista? {esta_en_lista(frutas, 'pera')}")
 print(f"¿'mango' está en la lista? {esta_en_lista(frutas, 'mango')}")
 print(f"Posición de 'uva': {posicion_en_lista(frutas, 'uva')}")
 print(f"Posición de 'mango': {posicion_en_lista(frutas, 'mango')}")
+
+
+
