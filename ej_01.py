@@ -20,3 +20,5 @@ notas=[10, 7, 4, 0, 11]
 for n in notas:
     resultado = clasificar_nota(n)
     print(f"{n} -> {resultado}")
+
+    
