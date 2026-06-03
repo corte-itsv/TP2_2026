@@ -1,5 +1,8 @@
 def filtrar_pares(numeros):
-    numeros_pares = [n for n in numeros if n % 2 == 0]
+    numeros_pares = []
+    for n in numeros:
+        if n % 2 == 0:
+            numeros_pares.append(n)
     return numeros_pares
 
 
