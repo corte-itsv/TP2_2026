@@ -16,4 +16,6 @@ print(f"Promedio A: {calcular_promedio(lista_a)}")
 print(f"Promedio B: {calcular_promedio(lista_b)}")
 print(f"Promedio C: {calcular_promedio(lista_c)}")
 
+
+
   
