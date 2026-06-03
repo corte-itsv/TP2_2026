@@ -11,7 +11,6 @@ def clasificar_notas(nota):
         return("Desaprobado (lejos)")
     else:
         return("Nota inválda")
-clasificar_notas
 
 for nota in [10, 7, 4, 0, 11]:
     print(f"{nota} = {clasificar_notas(nota)}")
