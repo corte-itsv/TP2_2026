@@ -19,3 +19,7 @@ min_val, max_val = min_max(numeros)
 
 print(f"Mínimo: {min_val}")
 print(f"Máximo: {max_val}")
+
+
+
+
