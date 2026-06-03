@@ -18,4 +18,7 @@ print(f"Promedio C: {calcular_promedio(lista_c)}")
 
 
 
+
+
+
   
