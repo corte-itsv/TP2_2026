@@ -30,5 +30,5 @@ curso = {nombre: [int(n) for n in notas.split(",")] for nombre, notas in datos_c
 promedios_dict = calcular_promedios(curso)
 print(f"Promedios: {promedios_dict}")
 destacado, nota_destacado = alumno_destacado(promedios_dict)
-print(f"Alumno destacado: {destacado} ({nota_destacado})")
+print(f"Alumno destacado: {destacado} ")
 print(f"Aprobados: {alumnos_aprobados(promedios_dict)}")
