@@ -8,6 +8,5 @@ numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 
 numeros_pares = filtrar_pares(numeros)
 
-
 print("Versión A:", numeros_pares)
 print("Versión B:", numeros_pares)
