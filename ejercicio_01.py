@@ -1,4 +1,4 @@
-def clasificar(nota):
+def clasificar_nota(nota):
     if nota > 10 or nota < 0:
         print(f"{nota}->Nota Invalida")
     elif nota == 10:
@@ -12,8 +12,8 @@ def clasificar(nota):
     else:
         print(f"{nota}->Desaprobado (lejos)")
 
-clasificar(10)
-clasificar(7)
-clasificar(4)
-clasificar(0)
-clasificar(11)
+clasificar_nota(10)
+clasificar_nota(7)
+clasificar_nota(4)
+clasificar_nota(0)
+clasificar_nota(11)
