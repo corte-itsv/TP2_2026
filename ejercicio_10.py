@@ -1,18 +1,17 @@
 def tabla_multiplicar(numero):
-    tabla = []
+    lista_tabla = []
+    for multiplicador in range(1,11):
+        resultado=numero*multiplicador
+        lista_tabla.append((multiplicador, resultado))
+    return lista_tabla
 
-    for multiplicador in range(1, 11):
-        tabla.append((multiplicador, numero * multiplicador))
 
-    return tabla
+def mostrar_tabla(tabla, numero):
+    print(f"=== Tabla del{numero} ===")
+    for multiplicador, resultado in tabla:
+        print(f"{numero}x{multiplicador}={resultado}")
 
 
-def mostrar_tabla(numero, tabla):
-    for dato in tabla:
-        print(f"{numero} x {dato[0]} = {dato[1]}")
-
-print("=== Tabla del 7 ===")
 numero = 7
-tabla = tabla_multiplicar(numero)
-
-mostrar_tabla(numero, tabla)
+tabla=tabla_multiplicar(numero)
+mostrar_tabla(tabla, numero)
