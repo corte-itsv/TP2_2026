@@ -17,3 +17,5 @@ notas = [8, 3, 6, 10, 4, 7, 5, 9, 6, 2]
 print(f"Total: {len(notas)} alumnos")
 print(f"Aprobados: {contar_aprobados(notas)}")
 print(f"Desaprobados: {contar_desaprobados(notas)}")
+
+
