@@ -1,4 +1,4 @@
-def filtrar_pares_version_a(numeros):
+def filtrar_pares(numeros):
     pares = []
     for numero in numeros:
         if numero % 2 == 0:
@@ -6,14 +6,14 @@ def filtrar_pares_version_a(numeros):
     return pares
 
 
-def filtrar_pares_version_b(numeros):
+def filtrar_paresardos(numeros):
     return [numero for numero in numeros if numero % 2 == 0]
 
 
 if __name__ == "__main__":
     numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-    resultado_a = filtrar_pares_version_a(numeros)
-    resultado_b = filtrar_pares_version_b(numeros)
+    resultado_a = filtrar_pares(numeros)
+    resultado_b = filtrar_paresardos(numeros)
 
     print(f"Versión A: {resultado_a}")
     print(f"Versión B: {resultado_b}")
