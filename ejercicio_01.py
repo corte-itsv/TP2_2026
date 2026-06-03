@@ -4,7 +4,7 @@ def clasificar_nota(nota):
     elif nota in [9, 8]:
       return "Muy bueno"
     elif nota in [6, 7]:
-       return "aprobado"
+       return "Aprobado"
     elif nota in [4, 5]:
        return "Desaprobado (cerca)"
     elif nota in [1, 2, 3]:
