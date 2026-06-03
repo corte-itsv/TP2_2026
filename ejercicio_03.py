@@ -13,12 +13,11 @@ def contar_desaprobados(notas):
         if nota < 6:
             desaprobados += 1
     return desaprobados
-alumnos = 10
+alumnos = 10 
 
 
-print("Alumnos", alumnos)
-print("Aprobados:", contar_aprobados(alumnos))
-print("Desaprobados:", contar_desaprobados(alumnos))
-
+print("alumnos:", alumnos)
+print("aprobados:", contar_aprobados([8, 3, 6, 10, 4, 7, 5, 9, 6, 2]))
+print("desaprobados:", contar_desaprobados([8, 3, 6, 10, 4, 7, 5, 9, 6, 2]))
 
 
