@@ -8,7 +8,7 @@ def filtrar_largas(palabras, minimo):
     return[p for p in palabras if len(p) >= minimo]
 
 def iniciales(palabras):
-    return[p[0] for p in palabras]
+    return[p[0].upper() for p in palabras]
 
 palabras = ["python", "programacion", "dato", "lista", "funcion", "set", "bucle"]
 print(f"Mayúsculas: {a_mayusculas(palabras)}")
