@@ -1,9 +1,12 @@
 def calcular_promedio(notas):
     if len(notas) == 0:
-        return 0
+      return 0
+    
+    
+    promedio = sum (notas)/ len(notas)
+    
+    return (promedio)
 
-    promedio = sum(notas) / len(notas)
-    return round(promedio, 1)
 
 
 lista_a = [8, 9, 7, 10, 6]
