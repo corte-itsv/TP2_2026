@@ -1,6 +1,7 @@
 def registrar_alumno(padron, nombre):
     padron.add(nombre)
 
+
 def votar(votos, ya_votaron, nombre_votante, candidato, padron):
     if nombre_votante not in padron:
         print(f"{nombre_votante} no está habilitado para votar.")
@@ -18,17 +19,19 @@ def votar(votos, ya_votaron, nombre_votante, candidato, padron):
         votos["Blanco"] += 1
         print(f"{nombre_votante} votó en blanco.")
 
+
 def resultado(votos):
     return dict(
         sorted(
             votos.items(),
-            key=lambda x: x[1],
+            key=lambda item: item[1],
             reverse=True
         )
     )
 
+
 def ganador(votos):
-    return max(votos.items(), key=lambda x: x[1])
+    return max(votos, key=votos.get)
 
 
 padron = set()
@@ -58,8 +61,8 @@ votar(votos, ya_votaron, "Lucía", "Marta", padron)
 print("\n=== RESULTADOS ===")
 
 for candidato, cantidad in resultado(votos).items():
-    print(f"{candidato}: {cantidad} votos")
+    print(f"{candidato:<7}: {cantidad} votos")
 
-gan, cant = ganador(votos)
+gan = ganador(votos)
 
-print(f"\n🏆 Ganador/a: {gan} con {cant} votos")
+print(f"\n🏆 Ganador/a: {gan} con {votos[gan]} votos")
