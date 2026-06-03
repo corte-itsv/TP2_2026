@@ -1,27 +1,13 @@
 def a_mayusculas(palabras):
-    mayusculas = []
-    for palabra in palabras:
-        mayusculas.append(palabra.upper())
-    return mayusculas
-
+    return [palabra.upper() for palabra in palabras]
 def longitudes(palabras):
-    longitudes_a = []
-    for palabra in palabras:
-        longitudes_a.append(len(palabra))
-    return longitudes_a
+    return [len(palabra) for palabra in palabras]
 
 def filtrar_largas(palabras, minimo):
-    mas_largas = []
-    for palabra in palabras:
-        if len(palabra) >= minimo:
-            mas_largas.append(palabra)
-    return mas_largas
+    return [palabra for palabra in palabras if len(palabra) >= minimo]
 
 def iniciales(palabras):
-    inicial = []
-    for palabra in palabras:
-        inicial.append(palabra[0].upper())
-    return inicial
+    return [palabra[0].upper() for palabra in palabras]
 
 palabras = ["python", "programacion", "dato", "lista", "funcion", "set", "bucle"]
 
