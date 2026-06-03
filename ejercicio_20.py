@@ -51,4 +51,4 @@ for cand, cant in resultados_ordenados.items():
 
 print()
 nom_ganador, cant_ganador = ganador(votos)
-print(f"🏆 Ganador/a: {nom_ganador} con {cant_ganador} votos")
+print(f" Ganador/a: {nom_ganador}")
