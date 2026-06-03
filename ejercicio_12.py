@@ -25,6 +25,3 @@ clase_miercoles = ["Ana", "Sol", "Pedro", "Julia", "Tomás"]
 print(f"Asistieron ambos días: {sorted(interseccion(clase_lunes, clase_miercoles))}")
 print(f"Asistieron al menos un día: {sorted(union(clase_lunes, clase_miercoles))}")
 print(f"Solo el lunes: {sorted(diferencia(clase_lunes, clase_miercoles))}")
-print(f"Asistieron en ambos dias: {interseccion(clase_lunes, clase_miercoles)}")
-print(f"Asistieron al menos un dia:{union(clase_lunes, clase_miercoles)}")
-print(f"Solo el lunes:{solo_en_a(clase_lunes, clase_miercoles)}")
