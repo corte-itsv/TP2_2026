@@ -65,4 +65,7 @@ for candidato, cantidad in resultado(votos).items():
 
 gan = ganador(votos)
 
+
+
+print(f"\n🏆 Ganador/a: {gan} con {votos[gan]} votos")
 print(f"\n🏆 Ganador/a: {gan}")
