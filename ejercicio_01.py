@@ -1,19 +1,23 @@
 def clasificar_nota(nota):
-    if nota > 10 or nota < 0:
-        print(f"{nota}->Nota Invalida")
+    if nota > 10 or nota <= 0:
+        return "Nota inválida"
     elif nota == 10:
-        print(f"{nota}->Perfecto")
+        return "Perfecto"
     elif nota >= 8:
-        print(f"{nota}->Muy Bueno")
+        return "Muy bueno"
     elif nota >= 6:
-        print(f"{nota}->Aprobado")
+        return "Aprobado"
     elif nota >= 4:
-        print(f"{nota}->Desaprobado (cerca)")
+        return "Desaprobado (cerca)"
     else:
-        print(f"{nota}->Desaprobado (lejos)")
-
-clasificar_nota(10)
-clasificar_nota(7)
-clasificar_nota(4)
-clasificar_nota(0)
-clasificar_nota(11)
+        return "Desaprobado (lejos)"
+nota = 10
+print(f"{nota} → {clasificar_nota(nota)}")
+nota = 7
+print(f"{nota} → {clasificar_nota(nota)}")
+nota = 4
+print(f"{nota} → {clasificar_nota(nota)}")
+nota = 0
+print(f"{nota} → {clasificar_nota(nota)}")
+nota = 11
+print(f"{nota} → {clasificar_nota(nota)}")
