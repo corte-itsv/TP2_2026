@@ -26,9 +26,9 @@ def resumen(curso):
     mejor = max(promedios, key=promedios.get)
     peor  = min(promedios, key=promedios.get)
 
-    print(f"Promedio general del curso: {prom_general}")
-    print(f"Mejor promedio: {mejor} ({promedios[mejor]})")
-    print(f"Peor promedio: {peor} ({promedios[peor]})")
+    print(f"Promedio general del curso: {prom_general:.2f}")
+    print(f"Mejor promedio: {mejor} ({promedios[mejor]:.2f})")
+    print(f"Peor promedio: {peor} ({promedios[peor]:.2f})")
 
 
 curso = {

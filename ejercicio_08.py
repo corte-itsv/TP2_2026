@@ -15,7 +15,7 @@ def palabra_mas_repetida(frecuencias):
         if cantidad > mayor:
             mayor = cantidad
             mas_repetida = palabra
-    return mas_repetida, mayor
+    return mas_repetida
 
 
 palabras = ["python", "es", "genial", "python", "es", "facil", "python"]
@@ -23,5 +23,5 @@ palabras = ["python", "es", "genial", "python", "es", "facil", "python"]
 frecuencias = contar_frecuencia(palabras)
 print(frecuencias)
 
-palabra, cantidad = palabra_mas_repetida(frecuencias)
-print(f"La palabra más repetida es: '{palabra}' ({cantidad} veces)")
+palabra = palabra_mas_repetida(frecuencias)
+print(f"La palabra más repetida es: '{palabra}' ({frecuencias[palabra]} veces)")
