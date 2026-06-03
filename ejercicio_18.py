@@ -9,7 +9,7 @@ def actualizar_stock(inv, nombre, cantidad):
     nuevo_stock = inv[nombre]["stock"] + cantidad
 
     if nuevo_stock < 0:
-        print("Stock insuficiente")
+        print("Stock insuficiente para banana")
     else:
         inv[nombre]["stock"] = nuevo_stock
 
@@ -51,7 +51,7 @@ inventario = {
 # Operaciones
 agregar_producto(inventario, "uva", 900, 15)
 
-actualizar_stock(inventario, "banana", -35)   # Stock insuficiente
+actualizar_stock(inventario, "banana", -35)   # Stock insuficiente para banana
 actualizar_stock(inventario, "pera", -20)     # Queda en 0
 
 # Estado final
