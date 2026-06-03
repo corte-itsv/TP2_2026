@@ -14,5 +14,5 @@ def clasificar_nota(nota):
     
 notas_a_aprobar = [10, 7, 4, 0, 11]
 for n in notas_a_aprobar:
-        resultado = clasificar_nota(n)
-        print(f"{n} -> {resultado}")
+    resultado = clasificar_nota(n)
+    print(f"{n} -> {resultado}")
