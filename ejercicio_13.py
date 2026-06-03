@@ -5,7 +5,7 @@ def alumno_destacado(promedios):
   return max(promedios, key=promedios.get)
 
 def alumnos_aprobados(promedios):
-  return {nombre for nombre, promedio in promedios.items() if promedio >= 6}
+  return [nombre for nombre, promedio in promedios.items() if promedio >= 6]
 
 curso = {
     "Ana":     [9, 10, 8, 9],
