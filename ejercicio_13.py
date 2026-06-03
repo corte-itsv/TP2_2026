@@ -27,5 +27,5 @@ promedios = calcular_promedios(curso)
 aprobados = alumnos_aprobados(promedios)
 
 print(f"Promedios: {promedios}")
-print(f"Alumno destacado: {mejor_alumno(promedios)}")
+print(f"Alumno destacado: {mejor_alumno(promedios)} ({promedios[mejor_alumno(promedios)]})")
 print(f"Aprobados: {aprobados}")
