@@ -1,31 +1,40 @@
 def promedio(notas):
     return round(sum(notas) / len(notas), 2)
 
+
 def condicion(prom):
     if prom >= 6:
         return "Aprobado"
     else:
         return "Desaprobado"
 
+
 def reporte_curso(curso):
     datos = []
 
-    for nombre, notas in curso.items():
+    for alumno, notas in curso.items():
         prom = promedio(notas)
-        datos.append((nombre, prom, condicion(prom)))
+        datos.append((alumno, prom, condicion(prom)))
 
     datos.sort(key=lambda x: x[1], reverse=True)
 
-    print("REPORTE DEL CURSO")
-    print("-" * 35)
-    print(f"{'Alumno':<10} {'Promedio':<10} {'Condición'}")
-    print("-" * 35)
+    print("=" * 38)
+    print("          REPORTE DEL CURSO")
+    print("=" * 38)
+    print("Alumno     | Promedio | Condición")
+    print("-" * 38)
 
-    for nombre, prom, cond in datos:
-        print(f"{nombre:<10} {prom:<10} {cond}")
+    for alumno, prom, estado in datos:
+        print(f"{alumno:<10} | {prom:>8.2f} | {estado}")
+
+    print("=" * 38)
+
 
 def resumen(curso):
-    promedios = {nombre: promedio(notas) for nombre, notas in curso.items()}
+    promedios = {}
+
+    for alumno, notas in curso.items():
+        promedios[alumno] = promedio(notas)
 
     promedio_general = round(
         sum(promedios.values()) / len(promedios), 2
@@ -34,14 +43,16 @@ def resumen(curso):
     mejor_alumno = max(promedios, key=promedios.get)
     peor_alumno = min(promedios, key=promedios.get)
 
-    print("\nRESUMEN")
-    print("-" * 35)
-    print("Promedio general:", promedio_general)
-    print("Mejor alumno:", mejor_alumno, "-", promedios[mejor_alumno])
-    print("Peor alumno:", peor_alumno, "-", promedios[peor_alumno])
+    print(f"Promedio general del curso: {promedio_general:.2f}")
+    print(
+        f"Mejor promedio: {mejor_alumno} ({promedios[mejor_alumno]:.2f})"
+    )
+    print(
+        f"Peor promedio: {peor_alumno} ({promedios[peor_alumno]:.2f})"
+    )
 
 
-# Datos
+# Diccionario dado
 curso = {
     "Ana":     [9, 10, 8, 9, 7],
     "Luis":    [6, 5, 7, 6, 4],
@@ -51,6 +62,5 @@ curso = {
     "Pedro":   [5, 4, 6, 5, 3],
 }
 
-# Prueba
 reporte_curso(curso)
 resumen(curso)
