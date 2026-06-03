@@ -43,16 +43,16 @@ def mostrar_inventario(inv):
 
 # Inventario inicial
 inventario = {
-    "manzana": {"precio": 500, "stock": 50},
-    "banana":  {"precio": 300, "stock": 30},
-    "pera":    {"precio": 700, "stock": 20},
+    "manzana:": {"precio": 500, "stock": 50},
+    "banana:":  {"precio": 300, "stock": 30},
+    "pera:":    {"precio": 700, "stock": 20},
 }
 
 # Operaciones
-agregar_producto(inventario, "uva", 900, 15)
+agregar_producto(inventario, "uva:", 900, 15)
 
-actualizar_stock(inventario, "banana", -35)   # Stock insuficiente para banana
-actualizar_stock(inventario, "pera", -20)     # Queda en 0
+actualizar_stock(inventario, "banana:", -35)   # Stock insuficiente para banana
+actualizar_stock(inventario, "pera:", -20)     # Queda en 0
 
 # Estado final
 mostrar_inventario(inventario)
