@@ -6,7 +6,7 @@ def filtrar_pares(numeros):
 numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 
 
-numeros_pares, numeros_pares = filtrar_pares(numeros)
+numeros_pares = filtrar_pares(numeros)
 
 
 print("Versión A:", numeros_pares)
