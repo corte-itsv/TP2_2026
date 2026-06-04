@@ -8,9 +8,9 @@ def agregar_contacto(agenda, nombre, telefono):
 
 def buscar_contacto(agenda, nombre):
     if nombre in agenda:
-        return f"Telefono de {nombre}: {agenda[nombre]}"
+        return f"{agenda[nombre]}"
     else: 
-        return f"{nombre}: Contacto no encontrado"
+        return f"Contacto no encontrado"
     
 
 def eliminar_contacto(agenda, nombre):
