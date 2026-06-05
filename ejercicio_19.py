@@ -13,7 +13,11 @@ def frecuencia(texto):
     for palabra in palabras:
         frec[palabra] = frec.get(palabra, 0) + 1
 
-    return frec
+    frec_ordenada = dict(
+        sorted(frec.items(), key=lambda item: item[1], reverse=True)
+    )
+
+    return frec_ordenada
 
 def palabra_mas_comun(texto):
     frec = frecuencia(texto)
