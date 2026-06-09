@@ -1,9 +1,5 @@
 def calcular_promedios(curso):
-    promedios = {}
-    for alumno, notas in curso.items():
-        promedio = sum(notas) / len(notas)
-        promedios[alumno] = promedio
-    return promedios
+    return {alumno: sum(notas) / len(notas) for alumno, notas in curso.items()}
 
 
 def alumno_destacado(promedios):
