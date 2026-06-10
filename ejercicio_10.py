@@ -5,6 +5,7 @@ def tabla_multiplicar(numero):
 def mostrar_tabla(tabla, numero):
     print("=" * 30)
     print(f"Tabla del {numero}")
+    print("Factor | Resultado")
     print("=" * 30)
     for factor, resultado in tabla:
         print(f"{numero} x {factor} = {resultado}")
