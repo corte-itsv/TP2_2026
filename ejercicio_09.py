@@ -43,5 +43,6 @@ print("Teléfono de Luis:",buscar_contacto(agenda, "Luis"))
 print("Pedro:",buscar_contacto(agenda, "Pedro"))
 print("")
 print("=== AGENDA ===")
+eliminar_contacto(agenda, "Marcos")
 print(mostrar_agenda(agenda))
 
