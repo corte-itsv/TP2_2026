@@ -1,25 +1,13 @@
 def interseccion(lista_a, lista_b):
-    resultado = []
-    for elemento in lista_a:
-        if elemento in lista_b and elemento not in resultado:
-            resultado.append(elemento)
-    return resultado 
+    return list(set(lista_a) & set(lista_b))
 
 
 def union(lista_a, lista_b):
-    resultado = lista_a.copy()
-    for elemento in lista_b:
-        if elemento not in resultado:
-            resultado.append(elemento)
-    return resultado 
+    return list(set(lista_a) | set(lista_b))
 
 
 def solo_en_a(lista_a, lista_b):
-    resultado = []
-    for elemento in lista_a:
-        if elemento not in lista_b and elemento not in resultado:
-            resultado.append(elemento)
-    return resultado 
+    return list(set(lista_a) - set(lista_b))
 
 
 clase_lunes    = ["Ana", "Luis", "Sol", "Marcos", "Julia"]
