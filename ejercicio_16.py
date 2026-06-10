@@ -15,10 +15,9 @@ def reporte_curso(curso):
         reporte[alumno] = (prom, condicion(prom))
     return reporte 
 
-
 def resumen(curso):
     promedios = {alumno: promedio(notas) for alumno, notas in curso.items()}
-    alumno_destacado = max(promedios, key=promedios.get)  # Remove trailing comma
+    alumno_destacado = max(promedios, key=promedios.get)
     promedio_destacado = round(promedios[alumno_destacado], 2)
     aprobados = [alumno for alumno, prom in promedios.items() if prom >= 6]
     
