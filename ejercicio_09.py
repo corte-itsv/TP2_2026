@@ -25,9 +25,8 @@ def mostrar_agenda(agenda):
     if len(agenda) == 0:
         return "La agenda está vacía"
     else:
-        contactos = [f"{nombre}: {telefono}" for nombre, telefono in sorted(agenda.items(), key=lambda x: x[0])]
+        contactos = [f"{nombre}: {telefono}" for nombre, telefono in sorted(agenda.items())]
         return "\n".join(contactos)
-
 
 agenda = {}
 agregar_contacto(agenda, "Ana",    "351-1234")
