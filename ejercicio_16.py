@@ -21,10 +21,12 @@ def resumen(curso):
     alumno_destacado = max(promedios, key=promedios.get)
     promedio_destacado = round(promedios[alumno_destacado], 2)
     aprobados = [alumno for alumno, prom in promedios.items() if prom >= 6]
+    promedio_aprobados = round(sum(promedios[a] for a in aprobados) / len(aprobados), 2)
     
     return {
         "alumno_destacado": (alumno_destacado, promedio_destacado),
-        "aprobados": aprobados
+        "aprobados": aprobados,
+        "promedio_aprobados": promedio_aprobados
     }
 
 
@@ -44,5 +46,5 @@ for alumno, (prom, estado) in reporte.items():
 
 print(f"\nResumen del curso:")
 resumen_data = resumen(curso)
-print("Promedio general del curso:", round(sum(resumen_data['aprobados']) / len(curso), 2))
+print("Promedio general del curso:", resumen_data['promedio_aprobados'])
 print(f"  Alumno destacado: {resumen_data['alumno_destacado'][0]} ({resumen_data['alumno_destacado'][1]})")
