@@ -13,7 +13,8 @@ def reporte_curso(curso):
     for alumno, notas in curso.items():
         prom = promedio(notas)
         reporte[alumno] = (prom, condicion(prom))
-    return reporte 
+    return reporte
+
 
 def resumen(curso):
     promedios = {alumno: promedio(notas) for alumno, notas in curso.items()}
@@ -36,5 +37,12 @@ curso = {
     "Pedro":   [5,  4, 6, 5, 3],
 }
 
-print(f"Reporte del curso: {reporte_curso(curso)}")
-print(f"Resumen del curso: {resumen(curso)}")
+print(f"Reporte del curso:")
+reporte = reporte_curso(curso)
+for alumno, (prom, estado) in reporte.items():
+    print(f"  {alumno}: {prom} - {estado}")
+
+print(f"\nResumen del curso:")
+resumen_data = resumen(curso)
+print("Promedio general del curso:", round(sum(resumen_data['aprobados']) / len(curso), 2))
+print(f"  Alumno destacado: {resumen_data['alumno_destacado'][0]} ({resumen_data['alumno_destacado'][1]})")
