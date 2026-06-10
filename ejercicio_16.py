@@ -47,4 +47,5 @@ for alumno, (prom, estado) in reporte.items():
 print(f"\nResumen del curso:")
 resumen_data = resumen(curso)
 print("Promedio general del curso:", resumen_data['promedio_aprobados'])
-print(f"  Alumno destacado: {resumen_data['alumno_destacado'][0]} ({resumen_data['alumno_destacado'][1]})")
+print(f"Alumno destacado: {resumen_data['alumno_destacado'][0]} ({resumen_data['alumno_destacado'][1]})")
+print(f"Peor promedio: {min(reporte, key=lambda a : reporte[a][0])} ({reporte[alumno][0]})")
