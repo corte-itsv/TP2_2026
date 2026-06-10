@@ -10,6 +10,15 @@ def contar_palabras(texto):
     return len(conteo) 
 
 
+def palabras_unicas(texto):
+    palabras = texto.split()
+    unicas = set()
+    for palabra in palabras:
+        palabra = palabra.lower().strip(".,!?;:\"()")
+        unicas.add(palabra)
+    return sorted(unicas)
+
+
 def frecuencia(texto):
     palabras = texto.split()
     conteo = {}
@@ -43,6 +52,9 @@ en ciencia de datos inteligencia artificial y desarrollo web"""
 
 
 print("Conteo de palabras:", contar_palabras(texto))
-print("Frecuencia de palabras:", frecuencia(texto))
+print("Palabras únicas:", palabras_unicas(texto))
+print("Frecuencia de palabras:")
+for palabra, freq in frecuencia(texto).items():
+    print(f"  {palabra}: {freq}")
 print("Palabra más común:", palabra_mas_comun(texto))
-print("Palabras largas (>=6):", palabras_largas(texto, 6))      
+print("Palabras largas (>=7):", palabras_largas(texto, 7))      
