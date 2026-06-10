@@ -35,8 +35,13 @@ agregar_contacto(agenda, "Luis",   "351-5678")
 agregar_contacto(agenda, "Marcos", "351-9012")
 
 
+
+print("=== AGENDA ===")
 print(mostrar_agenda(agenda))
+print("")
 print("Teléfono de Luis:",buscar_contacto(agenda, "Luis"))
 print("Pedro:",buscar_contacto(agenda, "Pedro"))
+print("")
+print("=== AGENDA ===")
 print(mostrar_agenda(agenda))
 
