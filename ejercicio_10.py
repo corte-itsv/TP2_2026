@@ -3,7 +3,7 @@ def tabla_multiplicar(numero):
 
 
 def mostrar_tabla(tabla, numero):
-    print(f"Tabla de multiplicar del {numero}:") 
+    print("Tabla de multiplicar del", numero)
     for factor, resultado in tabla:
         print(f"{numero} x {factor} = {resultado}")
 
