@@ -49,4 +49,4 @@ print(inventario)
 print(agregar_producto(inventario, "uva", 900, 15))
 print(actualizar_stock(inventario, "banana", -35))
 print(actualizar_stock(inventario, "pera", -20) )
-
+print(mostrar_inventario(inventario))
