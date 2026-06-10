@@ -7,7 +7,7 @@ def contar_palabras(texto):
             conteo[palabra] += 1
         else:
             conteo[palabra] = 1
-    return len(conteo)  # Return count of unique words
+    return len(conteo) 
 
 
 def frecuencia(texto):
@@ -16,16 +16,15 @@ def frecuencia(texto):
     for palabra in palabras:
         palabra = palabra.lower().strip(".,!?;:\"()")
         conteo[palabra] = conteo.get(palabra, 0) + 1
-    # Sort by frequency (descending)
     return dict(sorted(conteo.items(), key=lambda x: x[1], reverse=True))
 
 
 def palabra_mas_comun(texto):
-    conteo = contar_palabras(texto)
+    conteo = frecuencia(texto)  
     if not conteo:
         return None
     palabra = max(conteo, key=conteo.get)
-    return (palabra, conteo[palabra])  # Return tuple with count
+    return (palabra, conteo[palabra])
 
 
 def palabras_largas(texto, minimo):
@@ -35,7 +34,7 @@ def palabras_largas(texto, minimo):
         palabra = palabra.lower().strip(".,!?;:\"()")
         if len(palabra) >= minimo and palabra not in largas:
             largas.append(palabra)
-    return sorted(largas)  # Return sorted list, not set
+    return sorted(largas)  
 
 
 texto = """python es un lenguaje de programacion
