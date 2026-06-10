@@ -11,7 +11,7 @@ def filtrar_largas(palabras, minimo):
 
 
 def iniciales(palabras):
-    return [palabra[0] for palabra in palabras if palabra]
+    return [palabra[0].upper() for palabra in palabras if palabra]
 
 
 palabras = ["Python", "Programacion", "Dato", "Lista", "Funcion", "Set", "Bucle"]
