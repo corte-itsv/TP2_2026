@@ -8,6 +8,8 @@ def agregar_producto(inv, nombre, precio, stock):
 
 def actualizar_stock(inv, nombre, cantidad):
     if nombre in inv:
+        if inv[nombre]["stock"] + cantidad < 0:
+            return "Stock insuficiente"
         inv[nombre]["stock"] += cantidad
         return "Stock actualizado"
     else:
@@ -17,9 +19,9 @@ def actualizar_stock(inv, nombre, cantidad):
 def productos_sin_stock(inv):
     sin_stock = []
     for nombre, info in inv.items():
-        if info ["stock"] == 0:
+        if info["stock"] == 0:
             sin_stock.append(nombre)
-        return sin_stock
+    return sin_stock  # Move return outside the loop
 
 
 def valor_total_inventario(inv):
