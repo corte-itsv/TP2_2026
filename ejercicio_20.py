@@ -1,9 +1,10 @@
-def registrar_alumno(padron, nombre):
-    if padron in alumnos:
+def registrar_alumno(alumnos_dict, nombre):
+    if nombre in alumnos_dict:  # Fixed variable name
         return "El alumno ya está registrado"
     else:
-        alumnos[padron] = nombre
+        alumnos_dict[nombre] = nombre
         return "Alumno registrado"
+
 
 
 def votar(votos, ya_votaron, nombre_votante, candidato, padron):
@@ -35,11 +36,12 @@ alumnos = {}
 ya_votaron = set()
 votos    = {"Ana": 0, "Luis": 0, "Sol": 0, "Blanco": 0}
 
-registrar_alumno(padron, "Valentina")
-registrar_alumno(padron, "Tomás")
-registrar_alumno(padron, "Camila")
-registrar_alumno(padron, "Diego")
-registrar_alumno(padron, "Lucía")
+registrar_alumno(alumnos, "Valentina")  # Pass alumnos, not padron
+registrar_alumno(alumnos, "Tomás")
+registrar_alumno(alumnos, "Camila")
+registrar_alumno(alumnos, "Diego")
+registrar_alumno(alumnos, "Lucía")
+
 
 votar(votos, ya_votaron, "Valentina", "Ana",  padron)
 votar(votos, ya_votaron, "Tomás",     "Sol",  padron)
