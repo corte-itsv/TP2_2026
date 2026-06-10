@@ -14,7 +14,7 @@ def iniciales(palabras):
     return [palabra[0] for palabra in palabras if palabra]
 
 
-palabras = ["python", "programacion", "dato", "lista", "funcion", "set", "bucle"]
+palabras = ["Python", "Programacion", "Dato", "Lista", "Funcion", "Set", "Bucle"]
 
  
 print(f"Mayúsculas: {a_mayusculas(palabras)}")
