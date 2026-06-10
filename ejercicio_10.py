@@ -3,11 +3,12 @@ def tabla_multiplicar(numero):
 
 
 def mostrar_tabla(tabla, numero):
-    print("`" * 3) 
-    print("===Tabla del", numero,"===")
+    print("=" * 30)
+    print(f"Tabla del {numero}")
+    print("=" * 30)
     for factor, resultado in tabla:
         print(f"{numero} x {factor} = {resultado}")
-    print("`" * 3) 
+    print("=" * 30)
 
 numero = 7
 tabla = tabla_multiplicar(numero)
