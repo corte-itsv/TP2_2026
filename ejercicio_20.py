@@ -43,13 +43,24 @@ registrar_alumno(alumnos, "Diego")
 registrar_alumno(alumnos, "Lucía")
 
 
-votar(votos, ya_votaron, "Valentina", "Ana",  padron)
-votar(votos, ya_votaron, "Tomás",     "Sol",  padron)
-votar(votos, ya_votaron, "Camila",    "Ana",  padron)
-votar(votos, ya_votaron, "Diego",     "Luis", padron)
-votar(votos, ya_votaron, "Valentina", "Sol",  padron)  
-votar(votos, ya_votaron, "Pedro",     "Ana",  padron)  
-votar(votos, ya_votaron, "Lucía",     "Marta",padron)
+def votar(votos, ya_votaron, padron, candidato):
+    if padron not in alumnos:
+        return "Padron no registrado"
+    elif padron in ya_votaron:
+        return "El alumno ya votó"
+    else:
+        ya_votaron.add(padron)
+        votos[candidato] = votos.get(candidato, 0) + 1
+        return "Voto registrado"
+
+# Update calls to use padron numbers
+votar(votos, ya_votaron, "Valentina", "Ana")
+votar(votos, ya_votaron, "Tomás", "Sol")
+votar(votos, ya_votaron, "Camila", "Ana")
+votar(votos, ya_votaron, "Diego", "Luis")
+votar(votos, ya_votaron, "Valentina", "Sol")
+votar(votos, ya_votaron, "Pedro", "Ana")
+votar(votos, ya_votaron, "Lucía", "Marta")  
 
 
 print(resultado(votos))
