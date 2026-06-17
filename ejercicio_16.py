@@ -13,7 +13,8 @@ def reporte_curso(curso):
     for alumno, notas in curso.items():
         prom = promedio(notas)
         reporte[alumno] = (prom, condicion(prom))
-    return "\n".join(f"  {alumno}: {prom} - {estado}" for alumno, (prom, estado) in reporte.items())
+    sorted_reporte = sorted(reporte.items(), key=lambda x: x[1][0], reverse=True)
+    return "\n".join(f"  {alumno}: {prom:.2f} - {estado}" for alumno, (prom, estado) in sorted_reporte)
 
 
 def resumen(curso):
@@ -25,10 +26,10 @@ def resumen(curso):
     promedio_general_del_curso = round(sum(promedios[a] for a in curso) / len(curso), 2)
     
     return {
-        "peor_alumno": (peor_alumno, promedios[peor_alumno]),
-        "alumno_destacado": (alumno_destacado, promedio_destacado),
+        "peor_alumno": (peor_alumno, f"{promedios[peor_alumno]:.2f}"),
+        "alumno_destacado": (alumno_destacado, f"{promedio_destacado:.2f}"),
         "aprobados": aprobados,
-        "promedio_general_del_curso": promedio_general_del_curso
+        "promedio_general_del_curso": f"{promedio_general_del_curso:.2f}"
     }
 
 
