@@ -1,6 +1,6 @@
 def promedio(notas):
     return round(sum(notas) / len(notas), 2)
-
+    
 def condicion(promedio):    
     if promedio >= 6:
         return "Aprobado"
@@ -14,9 +14,8 @@ def reporte_curso(curso):
         cond = condicion(prom)  
         lista_alumnos.append([nombre, prom, cond])
     lista_ordenada = sorted(lista_alumnos, key=lambda x: x[1], reverse=True)
-    
     print("======================================")
-    print("           REPORTE DEL CURSO")
+    print("          REPORTE DEL CURSO")
     print("======================================")
     print("Alumno     | Promedio | Condición")
     print("--------------------------------------")
@@ -25,16 +24,16 @@ def reporte_curso(curso):
     print("======================================")
     return lista_ordenada
 
-def resumen(curso, lista_ordenada):
-    suma_promedios = 0
-    for alumno in lista_ordenada:
-        suma_promedios += alumno[1]
-    promedio_general = round(suma_promedios / len(lista_ordenada), 2) 
+def resumen(curso):
+    lista_alumnos = []
+    for nombre, notas in curso.items():
+        lista_alumnos.append([nombre, promedio(notas)])
+    lista_ordenada = sorted(lista_alumnos, key=lambda x: x[1], reverse=True)
+    promedio_general = round(sum(al[1] for al in lista_ordenada) / len(lista_ordenada), 2)
     mejor_alumno = lista_ordenada[0][0]    
     mejor_nota = lista_ordenada[0][1]
     peor_alumno = lista_ordenada[-1][0]
     peor_nota = lista_ordenada[-1][1]
-    
     print(f"Promedio general del curso: {promedio_general:.2f}")
     print(f"Mejor promedio: {mejor_alumno} ({mejor_nota:.2f})")
     print(f"Peor promedio: {peor_alumno} ({peor_nota:.2f})")
@@ -48,5 +47,5 @@ curso = {
     "Pedro":   [5,  4, 6, 5, 3],
 }
 
-lista_ordenada = reporte_curso(curso)
-resumen(curso, lista_ordenada)
+reporte_curso(curso)
+resumen(curso)
