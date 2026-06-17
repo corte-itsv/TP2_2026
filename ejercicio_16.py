@@ -25,12 +25,15 @@ def resumen(curso):
     aprobados = [alumno for alumno, prom in promedios.items() if prom >= 6]
     promedio_general_del_curso = round(sum(promedios[a] for a in curso) / len(curso), 2)
     
-    return {
-        "peor_alumno": (peor_alumno, f"{promedios[peor_alumno]:.2f}"),
-        "alumno_destacado": (alumno_destacado, f"{promedio_destacado:.2f}"),
-        "aprobados": aprobados,
-        "promedio_general_del_curso": f"{promedio_general_del_curso:.2f}"
-    }
+def resumen(curso):
+    promedios = {alumno: promedio(notas) for alumno, notas in curso.items()}
+    peor_alumno = min(promedios, key=promedios.get)
+    alumno_destacado = max(promedios, key=promedios.get)
+    promedio_destacado = round(promedios[alumno_destacado], 2)
+    aprobados = [alumno for alumno, prom in promedios.items() if prom >= 6]
+    promedio_general_del_curso = round(sum(promedios[a] for a in curso) / len(curso), 2)
+    
+    return f"Peor: {peor_alumno} ({promedios[peor_alumno]:.2f}), Mejor: {alumno_destacado} ({promedio_destacado:.2f}), General: {promedio_general_del_curso:.2f}"
 
 
 curso = {
@@ -51,6 +54,6 @@ print(reporte)
 
 
 resumen_data = resumen(curso)
-print(f"Promedio general del curso: {resumen_data['promedio_general_del_curso']}")
-print(f"Mejor promedio: {resumen_data['alumno_destacado'][0]} ({resumen_data['alumno_destacado'][1]})")
-print(f"Peor promedio: {resumen_data['peor_alumno'][0]} ({resumen_data['peor_alumno'][1]})")
+print(f"Promedio general del curso: {resumen_data}")
+print(f"Mejor promedio: {resumen_data[0]} ({resumen_data[1]})")
+print(f"Peor promedio: {resumen_data[0]} ({resumen_data[0]})")
