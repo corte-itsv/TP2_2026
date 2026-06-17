@@ -13,20 +13,22 @@ def reporte_curso(curso):
     for alumno, notas in curso.items():
         prom = promedio(notas)
         reporte[alumno] = (prom, condicion(prom))
-    return reporte
+    return "\n".join(f"  {alumno}: {prom} - {estado}" for alumno, (prom, estado) in reporte.items())
 
 
 def resumen(curso):
     promedios = {alumno: promedio(notas) for alumno, notas in curso.items()}
+    peor_alumno = min(promedios, key=promedios.get)
     alumno_destacado = max(promedios, key=promedios.get)
     promedio_destacado = round(promedios[alumno_destacado], 2)
     aprobados = [alumno for alumno, prom in promedios.items() if prom >= 6]
-    promedio_aprobados = round(sum(promedios[a] for a in aprobados) / len(aprobados), 2)
+    promedio_general_del_curso = round(sum(promedios[a] for a in curso) / len(curso), 2)
     
     return {
+        "peor_alumno": (peor_alumno, promedios[peor_alumno]),
         "alumno_destacado": (alumno_destacado, promedio_destacado),
         "aprobados": aprobados,
-        "promedio_aprobados": promedio_aprobados
+        "promedio_general_del_curso": promedio_general_del_curso
     }
 
 
@@ -39,13 +41,15 @@ curso = {
     "Pedro":   [5,  4, 6, 5, 3],
 }
 
-print(f"Reporte del curso:")
+print("=" * 30)
+print(f"REPORTE DEL CURSO")
 reporte = reporte_curso(curso)
-for alumno, (prom, estado) in reporte.items():
-    print(f"  {alumno}: {prom} - {estado}")
+print(reporte)
 
-print(f"\nResumen del curso:")
+
+
+
 resumen_data = resumen(curso)
-print("Promedio general del curso:", resumen_data['promedio_aprobados'])
-print(f"Alumno destacado: {resumen_data['alumno_destacado'][0]} ({resumen_data['alumno_destacado'][1]})")
-print(f"Peor promedio: {min(reporte, key=lambda a : reporte[a][0])} ({reporte[alumno][0]})")
+print(f"Promedio general del curso: {resumen_data['promedio_general_del_curso']}")
+print(f"Mejor promedio: {resumen_data['alumno_destacado'][0]} ({resumen_data['alumno_destacado'][1]})")
+print(f"Peor promedio: {resumen_data['peor_alumno'][0]} ({resumen_data['peor_alumno'][1]})")
