@@ -15,8 +15,7 @@ mensaje = "hola mundo"
 clave   = 3
 
 cifrado = cifrar(mensaje, clave)
-descifrado = descifrar(cifrado, clave)
-
+descifrado = descifrar(cifrado, clave) 
 print("Original:  ", mensaje)
 print("Cifrado:   ", cifrado)
 print("Descifrado:", descifrado)
