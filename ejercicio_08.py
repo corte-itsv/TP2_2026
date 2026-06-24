@@ -42,4 +42,4 @@ palabras = ["python", "es", "genial", "python", "es", "facil", "python"]
 diccionario_final = contar_frecuencia(palabras)
 print(diccionario_final)
 informacion_final = palabra_mas_repetida(diccionario_final)
-print("La palabra mas repetidas es: ", informacion_final)
+print("La palabra mas repetidas es: ", informacion_final) 
