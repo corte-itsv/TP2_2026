@@ -1,19 +1,31 @@
 def a_mayusculas(palabras):
-    return [palabra.upper() for palabra in palabras]  
+    lista_con_palabras_en_mayusculas = [palabra.upper() for palabra in palabras]
+    return lista_con_palabras_en_mayusculas
 
-def longitudes(palabras):
-    return [len(palabra) for palabra in palabras]
+def lista_de_longitudes(palabras):
+    lista_de_longitudes = [len(palabra) for palabra in palabras]
+    return lista_de_longitudes
 
 def filtrar_largas(palabras, minimo):
-    return [palabra for palabra in palabras if len(palabra) >= minimo]
+    palabras_largas = [palabra for palabra in palabras if len(palabra) >= minimo]
+    return palabras_largas
 
-def iniciales(palabras): 
-    return [palabra[0].upper() for palabra in palabras]  
+# devuelve la primer letra en mayuscula de cada palabra en palabras
+def iniciales(palabras):
+    primer_letra_en_may_de_cada_palabra = [palabra[0].upper() for palabra in palabras]
+    return primer_letra_en_may_de_cada_palabra
 
 palabras = ["python", "programacion", "dato", "lista", "funcion", "set", "bucle"]
-minimo = 6
 
-print(f"Mayusculas: {a_mayusculas(palabras)}")
-print(f"Longitudes: {longitudes(palabras)}")
-print(f"Largas (>={minimo}): {filtrar_largas(palabras, minimo)}")
-print(f"Iniciales: {iniciales(palabras)}")
+
+palabras_en_mayusculas = a_mayusculas(palabras)
+print("Mayúsculas: ", palabras_en_mayusculas)
+
+longitudes_listadas = lista_de_longitudes(palabras)
+print("Longitudes: ", longitudes_listadas)
+
+palabras_filtradas_segun_largo = filtrar_largas(palabras, 6)
+print("Largas (>=6): ", palabras_filtradas_segun_largo)
+
+primer_letra_de_cada_palabra = iniciales(palabras)
+print("Iniciales: ", primer_letra_de_cada_palabra)
