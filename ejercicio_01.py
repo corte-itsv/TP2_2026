@@ -1,4 +1,4 @@
-nota = int(input("Ingrese la nota del alumno: ")) 
+nota = int(input ("Ingrese la nota del alumno: ")) 
 
 def clasificar_nota(nota):
     if nota == 10:
@@ -13,5 +13,8 @@ def clasificar_nota(nota):
         return "Desaprobado (lejos)"
     else:
         return "Nota inválida"
-resultado = clasificar_nota(nota)
-print(resultado)
+
+nota_clasificada = clasificar_nota(nota)
+print(nota_clasificada)
+
+
