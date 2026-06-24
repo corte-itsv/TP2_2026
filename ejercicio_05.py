@@ -1,17 +1,13 @@
-# Versión A: usando for con append()
-def filtrar_pares_a(numeros):
-    pares = []
+def filtrar_pares(numeros):
+    numeros_pares = []
     for numero in numeros:
         if numero % 2 == 0:
-            pares.append(numero)
-    return pares
+            numeros_pares.append(numero)
+            
+    return numeros_pares
 
-# Versión B: usando list comprehension
-def filtrar_pares_b(numeros):
-    return [numero for numero in numeros if numero % 2 == 0]
+    
+numeros_benja = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 
-
-numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-
-print("Versión A:", filtrar_pares_a(numeros))
-print("Versión B:", filtrar_pares_b(numeros))
+todos_los_numeros_pares = filtrar_pares(numeros_benja)
+print("Numeros pares: ", todos_los_numeros_pares)
