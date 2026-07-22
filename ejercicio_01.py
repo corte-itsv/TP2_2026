@@ -10,7 +10,7 @@ def clasificar_nota(nota):
     elif nota == 1 or nota == 2 or nota == 3:
         return "Desaprobado (lejos)"
     else:
-        return "Nota no valida"
+        return "Nota Invalida"
 
 
 
