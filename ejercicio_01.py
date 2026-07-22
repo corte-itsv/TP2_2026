@@ -1,20 +1,22 @@
-nota = int(input ("Ingrese la nota del alumno: ")) 
-
 def clasificar_nota(nota):
     if nota == 10:
-        return "Perfecto"
-    elif nota == 8 or nota == 9:
-        return "Muy bueno"
-    elif nota == 6 or nota == 7:
-        return "Aprobado"
-    elif nota == 4 or nota == 5:
-        return "Desaprobado (cerca)"
-    elif nota == 1 or nota == 2 or nota == 3:
-        return "Desaprobado (lejos)"
+        print(f"{nota:<3}: ¡Perfecto!")
+    elif nota >= 8 and nota <= 9:
+        print(f"{nota:<}: Muy Bueno")
+    elif nota >= 6 and nota <= 7:
+        print(f"{nota:<3}: Aprobado")
+    elif nota >= 4 and nota <= 5:
+        print(f"{nota:<3}: Desaprobado (Cerca)")
+    elif nota >= 1 and nota <= 3:
+        print(f"{nota:<3}: Aprobado (Lejos)")
     else:
-        return "Nota inválida"
+        print(f"{nota:<3}: Nota inválida. Ingrese una nota del 1 al 10")
+    return
 
-nota_clasificada = clasificar_nota(nota)
-print(nota_clasificada)
+lista_de_notas = [10, 7, 4, 0, 11]
 
 
+print("=== RENDIMIENTO ===")
+
+for nota in lista_de_notas:
+    condicion = clasificar_nota(nota)

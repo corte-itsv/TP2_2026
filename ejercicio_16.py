@@ -1,46 +1,67 @@
 def promedio(notas):
-    promedio_redondeado_dos_dcimales = 0
+    promedio_del_alumno = 0
     suma_total = 0
     for nota in notas:
         suma_total = suma_total + nota
-    promedio = suma_total / len(notas)
-    promedio_redondeado_dos_dcimales = round(promedio, 2)
-    return promedio_redondeado_dos_dcimales
+    promedio_del_alumno = suma_total / len(notas)
+    promedio_final = round(promedio_del_alumno, 2)
+    return promedio_final
 
 def condicion(promedio):
+    condicion_final = "Desaprobado"
     if promedio >= 6:
-        return "Aprobado"
-    return "Desaprobado"
-        
+        condicion_final = "Aprobado"
+    return condicion_final
+
+def obtener_promedio_mas_alto(curso):
+    promedio_mas_alto = 0
+    alumno_con_promedio_mas_alto = ""
+    lista_de_promedios = []
+    for alumno, notas in curso.items():
+        promedio_de_alumno = promedio(notas)
+        lista_de_promedios.append((alumno, promedio_de_alumno))
+    for (alumno, promedio_de_alumno) in lista_de_promedios:
+        if promedio_de_alumno >= promedio_mas_alto:
+            promedio_mas_alto = promedio_de_alumno
+            alumno_con_promedio_mas_alto = alumno 
+    return (alumno_con_promedio_mas_alto, promedio_mas_alto)
+
 def reporte_curso(curso):
-    for nombre, notas in curso.items():
-        promedio_del_alumno = promedio(notas)
-        condicion_de_alumno = condicion(promedio_del_alumno)
-        print(nombre, "     |     ", promedio_del_alumno, "     |     ", condicion_de_alumno)
-    
-def promedio_general_del_curso(curso):
+    copia_de_curso = curso.copy()
+    promedios_de_mayor_a_menor = []
+    while len(copia_de_curso) > 0:
+        alumno, promedio_mas_alto = obtener_promedio_mas_alto(copia_de_curso)
+        condicion_de_promedio = condicion(promedio_mas_alto)
+        promedios_de_mayor_a_menor.append((alumno, promedio_mas_alto, condicion_de_promedio))
+        del copia_de_curso[alumno]
+    for (alumno, promedio_mas_alto, condicion_de_promedio) in promedios_de_mayor_a_menor:
+            print(f"{alumno:<10} | {promedio_mas_alto:>8.2f} | {condicion_de_promedio}")
+    return promedios_de_mayor_a_menor
+
+def resumen(curso):
+    promedio_general = 0
+    promedio_del_mejor_alumno = 0
+    alumno_con_mejor_promedio = ""
+    promedio_del_peor_alumno = 0
+    alumno_con_peor_promedio = ""
+    curso_reportado = reporte_curso(curso)
     array_de_promedios = []
-    for nombre, notas in curso.items():
-        promedio_del_alumno = promedio(notas)
+    tamaño_de_array = len(array_de_promedios)
+    posicion_final = tamaño_de_array - 1
+    suma_total = 0
+    for (alumno, promedio_del_alumno, condicion_alumno) in curso_reportado:
+        suma_total = suma_total + promedio_del_alumno
         array_de_promedios.append(promedio_del_alumno)
-    promedio_general_del_curso = promedio(array_de_promedios)
-    return promedio_general_del_curso
-
-def mejor_promedio(curso):
-    mejor_promedio = 0
-    for nombre, notas in curso.items():
-        promedio_del_alumno = promedio(notas)
-        if promedio_del_alumno > mejor_promedio:
-            mejor_promedio = promedio_del_alumno
-    return mejor_promedio
-
-def peor_promedio(curso):
-    peor_promedio = 10
-    for nombre, notas in curso.items():
-        promedio_del_alumno = promedio(notas)
-        if promedio_del_alumno < peor_promedio:
-            peor_promedio = promedio_del_alumno
-    return peor_promedio
+        if promedio_del_alumno == array_de_promedios[0]:
+            promedio_del_mejor_alumno = promedio_del_alumno
+            alumno_con_mejor_promedio = alumno
+        elif promedio_del_alumno == array_de_promedios[posicion_final]:
+            promedio_del_peor_alumno = promedio_del_alumno
+            alumno_con_peor_promedio = alumno
+    promedio_general = suma_total / len(curso_reportado)
+    promedio_final = round(promedio_general, 2)
+    return (promedio_final, alumno_con_mejor_promedio, promedio_del_mejor_alumno, promedio_del_peor_alumno, alumno_con_peor_promedio)
+    
 
 
 curso = {
@@ -54,15 +75,12 @@ curso = {
 
 
 print("======================================")
-print("          REPORTE DEL CURSO          ")
+print("          REPORTE DEL CURSO")
 print("======================================")
-print("Alumno     | Promedio | Condición")
+print(f"{'Alumno':<10} | {'Promedio':>8} | Condición")
 print("--------------------------------------")
-reporte_curso(curso)
+promedio_general, alumno_con_mejor_promedio, promedio_del_mejor_alumno, promedio_del_peor_alumno, alumno_con_peor_promedio = resumen(curso)
 print("======================================")
-promedio_final_del_curso = promedio_general_del_curso(curso)
-print("Promedio general del curso: ", promedio_final_del_curso)
-mejor_promedio_del_curso = mejor_promedio(curso)
-print("Mejor promedio: ", mejor_promedio_del_curso)
-peor_promedio_del_curso = peor_promedio(curso)
-print("Peor promedio: ", peor_promedio_del_curso)
+print(f"Promedio general del curso: {promedio_general:.2f}")
+print(f"Mejor promedio: {alumno_con_mejor_promedio} ({promedio_del_mejor_alumno:.2f})")
+print(f"Peor promedio: {alumno_con_peor_promedio} ({promedio_del_peor_alumno:.2f})")

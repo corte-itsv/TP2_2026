@@ -1,40 +1,35 @@
+def contar_alumnos(notas):
+    cantidad_de_alumnos = 0
+    for nota in notas:
+        cantidad_de_alumnos = cantidad_de_alumnos + 1
+    return cantidad_de_alumnos
+
 def contar_aprobados(notas):
-    cantidad_num_mayor_o_igual_6 = 0
+    cantidad_de_notas_aprobadas = 0
     for nota in notas:
         if nota >= 6:
-            cantidad_num_mayor_o_igual_6 = cantidad_num_mayor_o_igual_6 + 1 
-    return cantidad_num_mayor_o_igual_6
+            cantidad_de_notas_aprobadas = cantidad_de_notas_aprobadas + 1
+    return cantidad_de_notas_aprobadas
 
 def contar_desaprobados(notas):
-    cantidad_num_menores_6 = 0
+    cantidad_de_notas_desaprobadas = 0
+    cantidad_de_numeros_que_no_son_notas = 0
     for nota in notas:
-        if nota < 6:
-            cantidad_num_menores_6 = cantidad_num_menores_6 + 1
-    return cantidad_num_menores_6
+        if nota < 6 and nota >= 1:
+            cantidad_de_notas_desaprobadas = cantidad_de_notas_desaprobadas + 1
+    return cantidad_de_notas_desaprobadas
 
 
-notas_benja = [8, 3, 6, 10, 4, 7, 5, 9, 6, 2]
-
-total_de_alumnos = len(notas_benja) 
-
-print("Total: ", total_de_alumnos, "alumnos")
-cant_notas_aprovadas_benja = contar_aprobados(notas_benja)
-print("Aprobadas: ", cant_notas_aprovadas_benja)
-
-cant_notas_desaprobadas_benja = contar_desaprobados(notas_benja)
-print("Desaprobadas: ", cant_notas_desaprobadas_benja)
+notas = [8, 3, 6, 10, 4, 7, 5, 9, 6, 2]
 
 
+print("=== RESULTADOS ===")
 
+cantidad_de_alumnos = contar_alumnos(notas)
+print("Total", cantidad_de_alumnos, "alumnos.")
 
-def saldo_creditos(personas):
-    creditos_totales = 10
-    for persona in personas:
-        if persona == "Lucas":
-            creditos_totales = creditos_totales - 1
-    return creditos_totales
+aprobados = contar_aprobados(notas)
+print("Aprobados:", aprobados)
 
-lista_de_nombre = ["Lucas", "Benja", "Tomi", "Lucas"]
-
-saldo_final = saldo_creditos(lista_de_nombre)
-print("Saldo actualizado: ", saldo_final)
+desaprobados = contar_desaprobados(notas)
+print("Desaprobados:", desaprobados)

@@ -1,45 +1,32 @@
-persona = {
-    "edad": 12,
-    "nonmbre": "lucas",
-    "calbicie": True,
-}
-#print(persona["edad"])
-
-# print(persona["nonmbre"])
-#persona["nonmbre"] = "pedro"
-#print(persona["nonmbre"])
-#persona["nonmbre"] = "benja"
-#print(persona["nonmbre"])
-
-def contar_frecuencia(palabras):
-    diccionario = {}
-    for palabra in palabras:
-        if palabra not in diccionario:
-            diccionario[palabra] = 1
+def contar_frecuencia(lista):
+    frecuencias = {}
+    for palabra in lista:
+        if palabra not in frecuencias:
+            frecuencias[palabra] = 1
         else:
-            diccionario[palabra] = diccionario.get(palabra) + 1
-    return diccionario
+            frecuencias[palabra] = frecuencias[palabra] + 1
+    return frecuencias
 
-def palabra_mas_repetida(diccionario_de_frecuencias):
-    palabra_con_mayor_frecuencia = ""
-    frecuencia_de_claves = 0
-    for clave, valor in diccionario_de_frecuencias.items():
-        if valor > frecuencia_de_claves:
-            frecuencia_de_claves = valor
-            palabra_con_mayor_frecuencia = clave
-    return palabra_con_mayor_frecuencia
-        
-def primer_elemento_suficiente(diccionario_de_frecuencias, frecuencia_minima):
-    primer_clave_que_cumpla_condicion_frecuencia_minima = ""
-    for clave, valor in diccionario_de_frecuencias.items():
-        if valor >= frecuencia_minima:
-            primer_clave_que_cumpla_condicion_frecuencia_minima = clave
-            return primer_clave_que_cumpla_condicion_frecuencia_minima
-            
+def palabra_mas_repetida(frecuencias):
+    la_mas_repetida = ""
+    hipotesis_de_frecuencia = 0
+    for palabra, frecuencia in frecuencias.items():
+        if frecuencia > hipotesis_de_frecuencia:
+            hipotesis_de_frecuencia = frecuencia
+            la_mas_repetida = palabra
+    return (la_mas_repetida, hipotesis_de_frecuencia)
+
 
 palabras = ["python", "es", "genial", "python", "es", "facil", "python"]
 
-diccionario_final = contar_frecuencia(palabras)
-print(diccionario_final)
-informacion_final = palabra_mas_repetida(diccionario_final)
-print("La palabra mas repetidas es: ", informacion_final) 
+
+print("========== DICCIONARIO DE FRECUENCIAS ==========")
+
+frecuencias = contar_frecuencia(palabras)
+print(frecuencias)
+
+
+print("============ PALABRA MÁS FRECUENTE =============")
+
+la_mas_repetida, su_frecuencia = palabra_mas_repetida(frecuencias)
+print("La palabra mas repetida es:", la_mas_repetida, "(", su_frecuencia, "veces)")

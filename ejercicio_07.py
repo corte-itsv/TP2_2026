@@ -1,40 +1,44 @@
-def esta_en_lista(lista, elemento_a_encontrar):
-    respuesta = False
+def esta_en_lista(lista, elemento_a_ingresar):
+    el_elemento_está = False
     for elemento in lista:
-        if elemento == elemento_a_encontrar:
-            respuesta = True
-    return respuesta 
+        if elemento == elemento_a_ingresar:
+            el_elemento_está = True
+    return el_elemento_está
 
-def posicion_en_lista_1(lista, elemento_a_encontrar):
-    posicion = -1
-    contador_de_vueltas = 0
-    for elemento in lista:
-        if elemento == elemento_a_encontrar:
-            return contador_de_vueltas 
-        else:
-            contador_de_vueltas = contador_de_vueltas + 1
-    return posicion
 
-def posicion_en_lista(lista, elemento_a_encontrar):
-    posicion = -1 # hip
-    contador_de_vueltas = 0
-    for elemento in lista:
-        if elemento == elemento_a_encontrar:
-            posicion = contador_de_vueltas
-            break 
-        else:
-            contador_de_vueltas = contador_de_vueltas + 1
-    return posicion
+def posicion_en_lista(lista, elemento_a_ingresar):
+    existencia = esta_en_lista(lista, elemento_a_ingresar)
+    posicion_del_elemento = 0
+    if existencia == True:
+        for elemento in lista:
+            if elemento == elemento_a_ingresar:
+                return posicion_del_elemento
+            else:
+                posicion_del_elemento = posicion_del_elemento + 1
+    else:
+        posicion_del_elemento = "-1"
+
 
 
 frutas = ["manzana", "banana", "pera", "uva", "kiwi"]
 
 
-respuesta_final = esta_en_lista(frutas, "pera")
-print("¿'pera' está en la lista frutas? ", respuesta_final)
-respuesta_final = esta_en_lista(frutas, "mango")
-print("¿'mango' está en la lista frutas? ", respuesta_final)
-posicion_final_del_elemento = posicion_en_lista(frutas, "pera")
-print("Posición de uva = ", posicion_final_del_elemento)
-posicion_final_del_elemento = posicion_en_lista(frutas, "mango")
-print("Posición de mango = ", posicion_final_del_elemento)
+
+print("================== ¿EXISTE? ==================")
+
+el_elemento_está = esta_en_lista(frutas, "pera")
+print("¿El elemento 'pera' está en la lista? :", el_elemento_está)
+
+el_elemento_está = esta_en_lista(frutas, "mango")
+print("¿El elemento 'mango' está en la lista? :", el_elemento_está)
+
+print("")
+
+
+print("================ ¿DÓNDE ESTÁ? ================")
+
+posicion_del_elemento = posicion_en_lista(frutas, "uva")
+print("Posición del elemento 'uva':", posicion_del_elemento)
+
+posicion_del_elemento = posicion_en_lista(frutas, "mango")
+print("Posición del elemento 'mango':", posicion_del_elemento)

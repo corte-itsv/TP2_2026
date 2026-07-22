@@ -1,17 +1,18 @@
 def invertir(lista):
-    elementos_invertidos = []
+    lista_invertida = []
     for elemento in lista:
-        elementos_invertidos.insert(0, elemento)
-    return elementos_invertidos
+        lista_invertida.insert(0, elemento)
+    return lista_invertida
+
 
 
 original = [1, 2, 3, 4, 5]
 letras   = ["a", "b", "c", "d"]
-animales = ["perro", "gato", "loro"]
 
-originales_invertidos = invertir(original)
-print("Original = ", originales_invertidos)
+print("=== INVERTIDOS ===")
+
+original_inverida = invertir(original)
+print("Lista 'Original':", original_inverida)
+
 letras_invertidas = invertir(letras)
-print("Letras = ", letras_invertidas)
-animales_inertidos = invertir(animales)
-print("Animales = ", animales_inertidos)
+print("Lista 'Letras':", letras_invertidas)

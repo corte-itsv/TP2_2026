@@ -1,24 +1,15 @@
 def agrupar_por_inicial(nombres):
-    diccionario = {}
-    for nombre_prim_for in nombres:
-        primera_letra_nombre_prim_for = nombre_prim_for[0].upper()
-        diccionario[primera_letra_nombre_prim_for] = [nombre_prim_for]
-        for nombre_seg_for in nombres:
-            primera_letra_nombre_seg_for = nombre_seg_for[0].upper()
-            if primera_letra_nombre_seg_for == primera_letra_nombre_prim_for and nombre_seg_for not in diccionario[primera_letra_nombre_prim_for]:
-                diccionario[primera_letra_nombre_prim_for].append(nombre_seg_for) 
-    return diccionario
-
-def mostrar(diccionario):
-    for primer_letra_nombre, nombres_etc in diccionario.items():
-        print(primer_letra_nombre, ": ", nombres_etc)
-        
+    agrupacion_por_letras = {}
+    for nombre in nombres:
+        primer_letra = nombre[0].upper()
+        if agrupacion_por_letras.get(primer_letra) == None:
+            agrupacion_por_letras[primer_letra] = [nombre]
+        else:
+            agrupacion_por_letras[primer_letra].append(nombre)
+    return agrupacion_por_letras
+    
+nombres = ["Ana", "Alberto", "Belen", "Bruno", "Carlos", "Camila", "Ana Paula", "Diego", "Daniela"]
 
 
-lista_de_nombres = ["Ana", "Alberto", "Belen", "Bruno", "Carlos", "Camila", "Ana Paula", "Diego", "Daniela"]
-
-
-diccionario_final = agrupar_por_inicial(lista_de_nombres)
-# print(diccionario_final)
-
-mostrar(diccionario_final)
+nombres_agrupados = agrupar_por_inicial(nombres)
+print(nombres_agrupados)
