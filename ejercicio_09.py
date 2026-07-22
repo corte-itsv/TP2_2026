@@ -4,8 +4,7 @@ def agregar_contacto(agenda, nombre, telefono):
 def buscar_contacto(agenda, nombre):
     if nombre in agenda:
         return agenda[nombre]
-    else:
-        return "Contacto no encontrado"
+    return "Contacto no encontrado"
 
 def eliminar_contacto(agenda, nombre):
     if nombre in agenda:
@@ -18,17 +17,14 @@ def mostrar_agenda(agenda):
 
 
 agenda = {}
-agregar_contacto(agenda, "Ana", "351-1234")
-agregar_contacto(agenda, "Luis", "351-5678")
-agregar_contacto(agenda, "Marcos", "351-9012")
+agregar_contacto(agenda, "Marcos", "351-9012")  
+agregar_contacto(agenda, "Ana", "351-1234")     
+agregar_contacto(agenda, "Luis", "351-5678")   
 
 mostrar_agenda(agenda)
 
-tel_luis = buscar_contacto(agenda, "Luis")
-print(f"Teléfono de Luis: {tel_luis}")
-
-tel_pedro = buscar_contacto(agenda, "Pedro")
-print(f"Pedro: {tel_pedro}")
+print(f"Teléfono de Luis: {buscar_contacto(agenda, 'Luis')}")
+print(f"Pedro: {buscar_contacto(agenda, 'Pedro')}")
 
 eliminar_contacto(agenda, "Marcos")
 
