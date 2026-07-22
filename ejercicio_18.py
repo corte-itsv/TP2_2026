@@ -1,40 +1,35 @@
 def agregar_producto(inv, nombre, precio, stock):
-    if nombre in inv:
-        return "El producto ya existe"
+    inv[nombre] = {"precio": precio, "stock": stock}
+
+
+def actualizar_stock(inv, nombre, cantidad):
+    stock_actual = inv[nombre]["stock"]
+    
+    if stock_actual + cantidad < 0:
+        print(f"Stock insuficiente para {nombre}.\n")
     else:
-        inv[nombre] = {"precio": precio, "stock": stock}
-        return "Producto agregado"
-
-
-def actualizar_stock(inventario, producto, cantidad):
-    if producto not in inventario: 
-        return "Producto no encontrado" 
-    elif inventario[producto]["stock"] < cantidad:
-        return f"Stock insuficiente para {producto}"
-    inventario[producto]["stock"] -= cantidad 
-    return "Stock actualizado"
+        inv[nombre]["stock"] += cantidad
 
 
 def productos_sin_stock(inv):
     sin_stock = []
-    for nombre, info in inv.items():
-        if info["stock"] == 0:
+    for nombre, datos in inv.items():
+        if datos["stock"] == 0:
             sin_stock.append(nombre)
-    return sin_stock  # Move return outside the loop
+    return sin_stock
 
 
 def valor_total_inventario(inv):
     total = 0
-    for info in inv.values():
-        total += info["precio"] * info["stock"]
+    for datos in inv.values():
+        total += datos["precio"] * datos["stock"]
     return total
 
 
-def mostrar_inventario(inventario): 
-    if not inventario: 
-        return "Inventario vacío" 
-    lineas = [f"{producto}: {cantidad}" for producto, cantidad in sorted(inventario.items(), key=lambda it: it[0].lower())]
-    return "\n".join(lineas)
+def mostrar_inventario(inv):
+    print("=== INVENTARIO ===")
+    for nombre, datos in sorted(inv.items()):
+        print(f"{nombre}: ${datos['precio']} | Stock: {datos['stock']}")
 
 
 inventario = {
@@ -43,8 +38,13 @@ inventario = {
     "pera":    {"precio": 700,  "stock": 20},
 }
 
-print(inventario)
-print(agregar_producto(inventario, "uva", 900, 15))
-print(actualizar_stock(inventario, "banana", -35))  
-print(actualizar_stock(inventario, "pera", -20))    
-print(mostrar_inventario(inventario))
+# 1. Ejecutar las operaciones solicitadas
+agregar_producto(inventario, "uva", 900, 15)
+actualizar_stock(inventario, "banana", -35) 
+actualizar_stock(inventario, "pera", -20)    
+
+mostrar_inventario(inventario)
+print() 
+
+print(f"Sin stock: {productos_sin_stock(inventario)}")
+print(f"Valor total: ${valor_total_inventario(inventario)}")
