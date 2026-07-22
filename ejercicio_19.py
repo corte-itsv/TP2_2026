@@ -1,23 +1,14 @@
-def contar_palabras(texto):
-    palabras = texto.split()
-    conteo = {}
-    for palabra in palabras:
-        palabra = palabra.lower().strip(".,!?;:\"()")
-        if palabra in conteo:
-            conteo[palabra] += 1
-        else:
-            conteo[palabra] = 1
-    return len(conteo) 
+import re
+
+def contar_palabras(texto): 
+    palabras = re.findall(r"\b\w+\b", texto.lower()) 
+    return len(palabras)
 
 
-def palabras_unicas(texto):
-    palabras = texto.split()
-    unicas = set()
-    for palabra in palabras:
-        palabra = palabra.lower().strip(".,!?;:\"()")
-        unicas.add(palabra)
-    return sorted(unicas)
 
+def palabras_unicas(texto): 
+    palabras = re.findall(r"\b\w+\b", texto.lower()) 
+    return set(palabras)
 
 def frecuencia(texto):
     palabras = texto.split()
