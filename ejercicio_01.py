@@ -19,4 +19,4 @@ lista_de_notas = [10, 7, 4, 0, 11]
 print("=== RENDIMIENTO ===")
 
 for nota in lista_de_notas:
-    condicion = clasificar_nota(nota)
+    clasificar_nota(nota)

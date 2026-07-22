@@ -15,7 +15,7 @@ def contar_desaprobados(notas):
     cantidad_de_notas_desaprobadas = 0
     cantidad_de_numeros_que_no_son_notas = 0
     for nota in notas:
-        if nota < 6 and nota >= 1:
+        if nota < 6 and nota >= 0:
             cantidad_de_notas_desaprobadas = cantidad_de_notas_desaprobadas + 1
     return cantidad_de_notas_desaprobadas
 
@@ -29,7 +29,7 @@ cantidad_de_alumnos = contar_alumnos(notas)
 print("Total", cantidad_de_alumnos, "alumnos.")
 
 aprobados = contar_aprobados(notas)
-print("Aprobados:", aprobados)
+print(f"Aprovados: {aprobados:>4}")
 
 desaprobados = contar_desaprobados(notas)
-print("Desaprobados:", desaprobados)
+print(f"Desaprobados: {desaprobados}")

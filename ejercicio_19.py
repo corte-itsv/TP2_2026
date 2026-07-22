@@ -7,10 +7,15 @@ def contar_palabras(texto):
     cantidad_de_palabras = 0
     for palabra in lista_de_palabras_en_texto:
         cantidad_de_palabras = cantidad_de_palabras + 1
-    return (lista_de_palabras_en_texto, cantidad_de_palabras)
+    return cantidad_de_palabras
+
+def listar_palabras_ordenadas_alfabeticamente(texto):
+    lista_de_palabras_en_texto = texto.split()
+    lista_de_palabras_en_texto_ordenadas_abc = sorted(lista_de_palabras_en_texto, key=str.lower)
+    return lista_de_palabras_en_texto_ordenadas_abc
 
 def palabras_unicas(texto):
-    lista_de_palabras_en_texto, cantidad_de_palabras = contar_palabras(texto)
+    lista_de_palabras_en_texto = listar_palabras_ordenadas_alfabeticamente(texto)
     set_lista = set()
     cantidad_de_palabras_unicas = 0
     for palabra in lista_de_palabras_en_texto:
@@ -21,7 +26,7 @@ def palabras_unicas(texto):
 
 def frecuencia(texto):
     frecuencias = {}
-    lista_de_palabras_en_texto, cantidad_de_palabras = contar_palabras(texto)
+    lista_de_palabras_en_texto = listar_palabras_ordenadas_alfabeticamente(texto)
     for palabra in lista_de_palabras_en_texto:
         if palabra not in frecuencias:
             frecuencias[palabra] = 1
@@ -60,7 +65,7 @@ def palabra_mas_comun(texto):
     return (palabra_que_mas_se_repite, cantidad_de_veces_que_se_repite)
 
 def palabras_largas(texto, minimo):
-    lista_de_palabras_en_texto, cantidad_de_palabras = contar_palabras(texto)
+    lista_de_palabras_en_texto = listar_palabras_ordenadas_alfabeticamente(texto)
     lista_con_palabras_largas = []
     for palabra in lista_de_palabras_en_texto:
         if len(palabra) > minimo:
@@ -68,7 +73,7 @@ def palabras_largas(texto, minimo):
     return lista_con_palabras_largas
             
 
-lista_de_palabras_en_texto, cantidad_de_palabras = contar_palabras(texto)
+cantidad_de_palabras = contar_palabras(texto)
 print("Total de palabras:", cantidad_de_palabras)
 
 cantidad_de_palabras_unicas_en_texto = palabras_unicas(texto)

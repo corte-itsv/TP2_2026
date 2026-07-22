@@ -24,7 +24,7 @@ frutas = ["manzana", "banana", "pera", "uva", "kiwi"]
 
 
 
-print("================== ¿EXISTE? ==================")
+print("================= ¿EXISTE? ==================")
 
 el_elemento_está = esta_en_lista(frutas, "pera")
 print("¿El elemento 'pera' está en la lista? :", el_elemento_está)

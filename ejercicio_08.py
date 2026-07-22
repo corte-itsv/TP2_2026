@@ -14,8 +14,14 @@ def palabra_mas_repetida(frecuencias):
         if frecuencia > hipotesis_de_frecuencia:
             hipotesis_de_frecuencia = frecuencia
             la_mas_repetida = palabra
-    return (la_mas_repetida, hipotesis_de_frecuencia)
+    return la_mas_repetida
 
+def frecuencia_de_la_mas_repetida(frecuencias):
+    hipotesis_de_frecuencia = 0
+    for palabra, frecuencia in frecuencias.items():
+        if frecuencia > hipotesis_de_frecuencia:
+            hipotesis_de_frecuencia = frecuencia
+    return hipotesis_de_frecuencia
 
 palabras = ["python", "es", "genial", "python", "es", "facil", "python"]
 
@@ -24,9 +30,10 @@ print("========== DICCIONARIO DE FRECUENCIAS ==========")
 
 frecuencias = contar_frecuencia(palabras)
 print(frecuencias)
-
+print("")
 
 print("============ PALABRA MÁS FRECUENTE =============")
 
-la_mas_repetida, su_frecuencia = palabra_mas_repetida(frecuencias)
-print("La palabra mas repetida es:", la_mas_repetida, "(", su_frecuencia, "veces)")
+la_mas_repetida = palabra_mas_repetida(frecuencias)
+frecuencia_de_la_palabra_mas_repetida = frecuencia_de_la_mas_repetida(frecuencias)
+print(f"La palabra mas repetida es: {la_mas_repetida} ({frecuencia_de_la_palabra_mas_repetida} veces)")

@@ -60,7 +60,11 @@ def resumen(curso):
             alumno_con_peor_promedio = alumno
     promedio_general = suma_total / len(curso_reportado)
     promedio_final = round(promedio_general, 2)
-    return (promedio_final, alumno_con_mejor_promedio, promedio_del_mejor_alumno, promedio_del_peor_alumno, alumno_con_peor_promedio)
+    print("======================================")
+    print(f"Promedio general del curso: {promedio_general:.2f}")
+    print(f"Mejor promedio: {alumno_con_mejor_promedio} ({promedio_del_mejor_alumno:.2f})")
+    print(f"Peor promedio: {alumno_con_peor_promedio} ({promedio_del_peor_alumno:.2f})")
+    
     
 
 
@@ -79,8 +83,4 @@ print("          REPORTE DEL CURSO")
 print("======================================")
 print(f"{'Alumno':<10} | {'Promedio':>8} | Condición")
 print("--------------------------------------")
-promedio_general, alumno_con_mejor_promedio, promedio_del_mejor_alumno, promedio_del_peor_alumno, alumno_con_peor_promedio = resumen(curso)
-print("======================================")
-print(f"Promedio general del curso: {promedio_general:.2f}")
-print(f"Mejor promedio: {alumno_con_mejor_promedio} ({promedio_del_mejor_alumno:.2f})")
-print(f"Peor promedio: {alumno_con_peor_promedio} ({promedio_del_peor_alumno:.2f})")
+resumen(curso)

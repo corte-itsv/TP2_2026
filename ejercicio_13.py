@@ -1,12 +1,8 @@
 def calcular_promedios(curso):
-    promedios_por_alumno_del_curso = {}
-    suma_total = 0
-    for alumno, notas in curso.items():
-        for nota in notas:
-            suma_total = suma_total + nota
-        promedio_del_alumno = suma_total / len(notas)
-        promedios_por_alumno_del_curso[alumno] = promedio_del_alumno
-        suma_total = 0
+    promedios_por_alumno_del_curso = {
+        alumno: sum(notas) / len(notas)
+        for alumno, notas in curso.items()
+    }
     return promedios_por_alumno_del_curso
 
 def alumno_destacado(promedios):
@@ -16,8 +12,15 @@ def alumno_destacado(promedios):
         if promedio >= promedio_del_mejor_alumno:
             promedio_del_mejor_alumno = promedio
             mejor_alumno = alumno
-    return (mejor_alumno, promedio_del_mejor_alumno)
+    return mejor_alumno
             
+def promedio_del_mejor_alumno(promedios):
+    mejor_promedio = 0
+    for alumno, promedio in promedios.items():
+            if promedio >= mejor_promedio:
+                mejor_promedio = promedio
+    return mejor_promedio
+
 def alumnos_aprobados(promedios):
     lista_con_aprobados = []
     for alumno, promedio in promedios.items():
@@ -43,8 +46,9 @@ promedios_calculados = calcular_promedios(curso)
 print("Promedios:", promedios_calculados)
 print("")
 
-mejor_alumno, promedio_del_mejor_alumno = alumno_destacado(promedios_calculados)
-print("Alumno destacado:", mejor_alumno, "(", promedio_del_mejor_alumno, ")")
+mejor_alumno = alumno_destacado(promedios_calculados)
+mejor_promedio = promedio_del_mejor_alumno(promedios_calculados)
+print(f"Alumno destacado: {mejor_alumno} ({mejor_promedio})")
 print("")
 
 aprobados = alumnos_aprobados(promedios_calculados)

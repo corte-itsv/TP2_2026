@@ -114,6 +114,6 @@ registrar_alumno(padron, "Camila")
 registrar_alumno(padron, "Diego")
 registrar_alumno(padron, "Lucia")
 
-print("¡Bienvenido a la votación!")
-
-sistema()
+if __name__ == "__main__":
+    print("¡Bienvenido a la votación!")
+    sistema()

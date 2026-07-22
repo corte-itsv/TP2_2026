@@ -9,12 +9,12 @@ def tabla_multiplicar(numero):
 
 
 def mostrar_tabla(lista, numero):
+    print("=== TABLA DEL 7 ===")    
     for par_multi_resul in lista:
         multiplicador, resultado = par_multi_resul
-        print(numero, "x", multiplicador, "=", resultado)
+        print(f"{numero} x {multiplicador:>2} = {resultado}")
     return 
 
-print("=== TABLA DEL 7 ===")    
 
 lista_multi_resul = tabla_multiplicar(7)
 mostrar_tabla(lista_multi_resul, 7)

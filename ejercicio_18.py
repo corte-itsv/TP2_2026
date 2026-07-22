@@ -30,9 +30,15 @@ def valor_total_inventario(inv):
         precio_total = precio_total + calculo
     return precio_total
 
+def ordenar_productos_por_nombre(inv):
+    inventario_ordenado = {}
+    for nombre, edad in sorted(inv.items()):
+        inventario_ordenado[nombre] = edad
+    return inventario_ordenado
+
 def mostrar_inventario(inv):
     for nombre, info in inv.items():
-        print(f"{nombre}: ${info["precio"]} | Stock: {info["stock"]}")
+        print(f"{nombre:<10}: ${info["precio"]} | Stock: {info["stock"]}")
 
 
 agregar_producto(inventario, "uva", 900, 15)
@@ -42,8 +48,8 @@ print("")
 actualizar_stock(inventario, "pera", -20)
 
 print("======== INVENTARIO ========")
-
-mostrar_inventario(inventario)
+inventario_ordenado = ordenar_productos_por_nombre(inventario)
+mostrar_inventario(inventario_ordenado)
 
 print("")
 
@@ -51,4 +57,4 @@ lista_de_productos_sin_stock = productos_sin_stock(inventario)
 print("Sin stock:", lista_de_productos_sin_stock)
 
 precio_total = valor_total_inventario(inventario)
-print(precio_total)
+print(f"Valor total: ${precio_total}")
