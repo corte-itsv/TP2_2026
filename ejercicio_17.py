@@ -1,20 +1,23 @@
 def cifrar(texto, desplazamiento):
-    texto_cifrado = "" 
+    resultado = ""
     for caracter in texto:
-        caracter_cif = chr(ord(caracter) + desplazamiento)    
-        texto_cifrado += caracter_cif
-    return texto_cifrado
+        if caracter.isalpha():
+            resultado += chr((ord(caracter) - ord('a') + desplazamiento) % 26 + ord('a'))
+        else:
+            resultado += caracter
+    return resultado
+
 
 def descifrar(texto_cifrado, desplazamiento):
-    texto_descifrado = ""  
-    for caracter in texto_cifrado:
-        caracter_descif = chr(ord(caracter) - desplazamiento)  
-        texto_descifrado += caracter_descif  
-    return texto_descifrado
+    return cifrar(texto_cifrado, -desplazamiento)
+
 
 mensaje = "hola mundo"
 clave   = 3
-mensaje_encriptado = cifrar(mensaje, clave)
-print(f"Texto original: {mensaje}")
-print(f"Texto cifrado: {mensaje_encriptado}")
-print(f"Texto descifrado: {descifrar(mensaje_encriptado, clave)}")
+
+cifrado   = cifrar(mensaje, clave)
+descifrado = descifrar(cifrado, clave)
+
+print(f"Original:   {mensaje}")
+print(f"Cifrado:    {cifrado}")
+print(f"Descifrado: {descifrado}")

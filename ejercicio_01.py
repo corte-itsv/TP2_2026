@@ -13,6 +13,5 @@ def clasificar_nota(nota):
         return "Nota inválida"
 
 notas = [10, 7, 4, 0, 11]
-
 for nota in notas:
     print(f"{nota} → {clasificar_nota(nota)}")
