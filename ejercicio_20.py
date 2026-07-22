@@ -16,17 +16,26 @@ def votar(votos, ya_votaron, nombre_votante, candidato, padron):
     if candidato in ["Ana", "Luis", "Sol"]:
         votos[candidato] += 1
     else:
-        votos[candidato] = votos.get(candidato, 0) + 1
+        votos["Blanco"] += 1
         print(f"{nombre_votante} votó en blanco.")
 
 
 def resultado(votos):
-    return dict(sorted(votos.items(), key=lambda item: item[1], reverse=True))
+    votos_ordenados = dict(sorted(votos.items(), key=lambda item: item[1], reverse=True))
+    print("\n=== RESULTADOS ===")
+    for candidato, cant in votos_ordenados.items():
+        print(f"{candidato:<6} : {cant} votos")
+    return votos_ordenados
 
 
 def ganador(votos):
-    candidatos_reales = {k: v for k, v in votos.items() if k != "Blanco"}
-    return max(candidatos_reales, key=candidatos_reales.get)
+    ganador_actual = ""
+    votos_ganador = -1
+    for candidato, cantidad in votos.items():
+        if candidato != "Blanco" and cantidad > votos_ganador:
+            votos_ganador = cantidad
+            ganador_actual = candidato
+    return ganador_actual
 
 
 padron = set()
@@ -39,20 +48,16 @@ registrar_alumno(padron, "Camila")
 registrar_alumno(padron, "Diego")
 registrar_alumno(padron, "Lucía")
 
-votar(votos, ya_votaron, "Valentina", "Ana", padron)
-votar(votos, ya_votaron, "Tomás", "Sol", padron)
-votar(votos, ya_votaron, "Camila", "Ana", padron)
-votar(votos, ya_votaron, "Diego", "Luis", padron)
-votar(votos, ya_votaron, "Valentina", "Sol", padron) 
-votar(votos, ya_votaron, "Pedro", "Ana", padron)  
-votar(votos, ya_votaron, "Lucía", "Marta", padron) 
+votar(votos, ya_votaron, "Valentina", "Ana",  padron)
+votar(votos, ya_votaron, "Tomás",     "Sol",  padron)
+votar(votos, ya_votaron, "Camila",    "Ana",  padron)
+votar(votos, ya_votaron, "Diego",     "Luis", padron)
+votar(votos, ya_votaron, "Valentina", "Sol",  padron)
+votar(votos, ya_votaron, "Pedro",     "Ana",  padron)
+votar(votos, ya_votaron, "Lucía",     "Marta", padron)
 
-print("\n=== RESULTADOS ===")
-votos_ordenados = resultado(votos)
-for cand, cant in votos_ordenados.items():
-    texto_voto = "voto" if cant == 1 else "votos"
-    print(f"{cand} : {cant} {texto_voto}")
-print("")
-candidato_ganador = ganador(votos)
-print(f"🏆 Ganador/a: {candidato_ganador} con {votos[candidato_ganador]} votos")
+resultado(votos)
 
+nom_ganador = ganador(votos)
+cant_votos = votos[nom_ganador]
+print(f"\n🏆 Ganador/a: {nom_ganador} con {cant_votos} votos.")
