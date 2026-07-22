@@ -26,7 +26,6 @@ def mostrar_agenda(agenda):
         return "La agenda está vacía"
     else:
         contactos = [f"{nombre}: {telefono}" for nombre, telefono in sorted(agenda.items())]
-        eliminar_contacto(agenda, "Marcos")
         return "\n".join(contactos)
 
 
