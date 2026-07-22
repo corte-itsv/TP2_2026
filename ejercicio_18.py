@@ -6,14 +6,13 @@ def agregar_producto(inv, nombre, precio, stock):
         return "Producto agregado"
 
 
-def actualizar_stock(inv, nombre, cantidad):
-    if nombre in inv:
-        if inv[nombre]["stock"] + cantidad < 0:
-            return "Stock insuficiente"
-        inv[nombre]["stock"] += cantidad
-        return "Stock actualizado"
-    else:
-        return "Stock insuficiente"
+def actualizar_stock(inventario, producto, cantidad):
+    if producto not in inventario: 
+        return "Producto no encontrado" 
+    elif inventario[producto]["stock"] < cantidad:
+        return f"Stock insuficiente para {producto}"
+    inventario[producto]["stock"] -= cantidad 
+    return "Stock actualizado"
 
 
 def productos_sin_stock(inv):
@@ -31,12 +30,11 @@ def valor_total_inventario(inv):
     return total
 
 
-def mostrar_inventario(inv):
-    if len(inv) == 0:
-        return "El inventario está vacío"
-    else:
-        productos = [f"{nombre}: Precio ${info['precio']}, Stock {info['stock']}" for nombre, info in sorted(inv.items())]
-        return "\n".join(productos)
+def mostrar_inventario(inventario): 
+    if not inventario: 
+        return "Inventario vacío" 
+    lineas = [f"{producto}: {cantidad}" for producto, cantidad in sorted(inventario.items(), key=lambda it: it[0].lower())]
+    return "\n".join(lineas)
 
 
 inventario = {
@@ -47,6 +45,6 @@ inventario = {
 
 print(inventario)
 print(agregar_producto(inventario, "uva", 900, 15))
-print(actualizar_stock(inventario, "banana", -35))
-print(actualizar_stock(inventario, "pera", -20) )
+print(actualizar_stock(inventario, "banana", -35))  
+print(actualizar_stock(inventario, "pera", -20))    
 print(mostrar_inventario(inventario))
