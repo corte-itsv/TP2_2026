@@ -1,33 +1,32 @@
 def contar_frecuencia(palabras):
+    """
+    Cuenta la frecuencia de aparición de palabras y retorna un diccionario.
+    """
     frecuencias = {}
-
-    for palabra in palabras:
-        if palabra in frecuencias:
-            frecuencias[palabra] += 1
+    for p in palabras:
+        if p in frecuencias:
+            frecuencias[p] += 1
         else:
-            frecuencias[palabra] = 1
-
+            frecuencias[p] = 1
     return frecuencias
 
-
 def palabra_mas_repetida(frecuencias):
-    mayor_palabra = ""
-    mayor_cantidad = 0
+    """
+    Encuentra la palabra con la frecuencia más alta y la devuelve como string.
+    """
+    mas_repetida = None
+    max_frecuencia = -1
+    for palabra, freq in frecuencias.items():
+        if freq > max_frecuencia:
+            max_frecuencia = freq
+            mas_repetida = palabra
+    return mas_repetida
 
-    for palabra, cantidad in frecuencias.items():
-        if cantidad > mayor_cantidad:
-            mayor_palabra = palabra
-            mayor_cantidad = cantidad
 
-    return mayor_palabra, mayor_cantidad
+palabras_lista = ["python", "es", "genial", "python", "es", "facil", "python"]
+dicc_frecuencias = contar_frecuencia(palabras_lista)
 
-
-palabras = ["python", "es", "genial", "python", "es", "facil", "python"]
-
-frecuencias = contar_frecuencia(palabras)
-
-print(frecuencias)
-
-palabra, cantidad = palabra_mas_repetida(frecuencias)
-
-print(f"La palabra más repetida es: '{palabra}' ({cantidad} veces)")
+print(dicc_frecuencias)
+palabra = palabra_mas_repetida(dicc_frecuencias)
+veces = dicc_frecuencias[palabra]
+print(f"La palabra más repetida es: '{palabra}' ({veces} veces)")
