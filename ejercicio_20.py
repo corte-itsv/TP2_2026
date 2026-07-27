@@ -16,6 +16,7 @@ def votar(votos, ya_votaron, nombre_votante, candidato, padron):
     else:
         print(f"{nombre_votante} no está habilitado para votar.")
 
+
 def listar_tuplas(votos):
     lista_de_tuplas = []
     for candidato, sus_votos in votos.items():
@@ -33,7 +34,8 @@ def nuevo_dict_ordenado(votos):
     for (candidato, sus_votos) in lista_de_tuplas_ordenada:
         dict_nuevo[candidato] = sus_votos
     return dict_nuevo
-            
+
+
 def imprimir_votos_correctamente(votos):
     dict_nuevo = nuevo_dict_ordenado(votos)
     for candidato, sus_votos in dict_nuevo.items():
@@ -41,6 +43,7 @@ def imprimir_votos_correctamente(votos):
             print(f"{candidato:<7}: {sus_votos} votos")
         else:
             print(f"{candidato:<7}: {sus_votos} voto")
+
 
 def ganador(votos):
     candidato_mas_votado = ""
@@ -55,14 +58,13 @@ def ganador(votos):
 
 def sistema():
     while True:
-        
+
         print("")
         print("======= MENÚ DE OPCIONES =======")
         print("1) Empezar con la votación.")
         print("2) Mostrar resultados de la votación.")
         print("0) Salir.")
         print("")
-        
         opcion_ingresada = int(input("Ingrese un numero de opción: "))
 
         if opcion_ingresada == 1:
@@ -73,17 +75,17 @@ def sistema():
             print("Sol")
             print("Voto en blanco")
             print("")
-            
+
             nombre_ingresado_por_el_votante = input("Ingresa tu nombre para corroborar que podes votar: ")
             nombre_ingresado_por_el_votante = nombre_ingresado_por_el_votante.capitalize()
-            
+
             if nombre_ingresado_por_el_votante in padron:
                 candidato = input("Ingrese el NOMBRE de candidato que queres votar, con la primer letra en mayuscula: ")
                 votar(votos, ya_votaron, nombre_ingresado_por_el_votante, candidato, padron)
-        
+
             else:
                 print(f"{nombre_ingresado_por_el_votante} no está habilitado para votar.")
-                
+
         elif opcion_ingresada == 2:
             imprimir_votos_correctamente(votos)
             print("")
